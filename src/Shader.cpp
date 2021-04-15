@@ -10,9 +10,9 @@ Shader::Shader(const char *vertexPath, const char *fragmentPath) {
     vShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
     fShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
     try {
-        std::string srcFolder = "src/";
+        std::string srcFolder = "src/shaders/";
         vShaderFile.open(srcFolder.append(vertexPath));
-        srcFolder = "src/";
+        srcFolder = "src/shaders/";
         fShaderFile.open(srcFolder.append(fragmentPath));
         std::stringstream vShaderStream, fShaderStream;
 
@@ -96,8 +96,16 @@ void Shader::setFloat(const std::string &name, float value) const {
     glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
 }
 
-void Shader::setColour(const std::string &name, float red, float green, float blue, float alpha) const {
-    glUniform4f(glGetUniformLocation(ID, name.c_str()), red, green, blue, alpha);
+void Shader::setVec3(const std::string &name, float val1, float val2, float val3) const {
+    glUniform3f(glGetUniformLocation(ID, name.c_str()), val1, val2, val3);
+}
+
+void Shader::setVec3(const std::string &name, glm::vec3 vec) {
+    glUniform3f(glGetUniformLocation(ID, name.c_str()), vec.x, vec.y, vec.z);
+}
+
+void Shader::setVec4(const std::string &name, float val1, float val2, float val3, float val4) const {
+    glUniform4f(glGetUniformLocation(ID, name.c_str()), val1, val2, val3, val4);
 }
 
 void Shader::setMat4(const std::string &name, glm::mat4 mat) const {

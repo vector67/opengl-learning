@@ -25,7 +25,10 @@ public:
     void setInt(const std::string &name, int value) const;
     void setFloat(const std::string &name, float value) const;
 
-    void setColour(const std::string &name, float red, float green, float blue, float alpha) const;
+    void setVec3(const std::string &name, float val1, float val2, float val3) const;
+    void setVec3(const std::string &name, glm::vec3 vec);
+
+    void setVec4(const std::string &name, float val1, float val2, float val3, float val4) const;
 
     void setMat4(const std::string &name, glm::mat4 mat) const;
 };
