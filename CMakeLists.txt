@@ -10,10 +10,18 @@ find_package(glfw3 3.3 REQUIRED)
 project(main)
 add_subdirectory(include/glad)
 add_subdirectory(include/glm)
-add_executable(main src/main.cpp src/Shader.cpp src/Shader.h include/stb_image.h include/stb_image.cpp src/Camera.h)
+add_executable(main src/main.cpp src/Shader.cpp src/Shader.h include/stb_image.h include/stb_image.cpp src/Camera.h src/Mesh.cpp src/Mesh.h src/Model.cpp src/Model.h)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+file(GLOB LIBRARIES "include/*.dylib")
+message("LIBRARIES = ${LIBRARIES}")
+
+link_directories(include)
+link_libraries(main assimp)
+target_link_libraries(main PRIVATE ${LIBRARIES})
 target_link_libraries(main PRIVATE glfw)
 target_link_libraries(main PRIVATE glad)
 target_link_libraries(main PRIVATE glm)
+
 add_custom_target(run
         COMMAND main
         DEPENDS main
