@@ -5,7 +5,7 @@
 		<Option title="main"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\include\;CMake Files\include\glad\;CMake Files\include\glm\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\glfw3\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\include\;CMake Files\include\glad\;CMake Files\include\glm\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\glfw3\;CMake Files\configuration\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl"/>
@@ -54,6 +54,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/configuration"/>
 					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include"/>
 					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/glm/.."/>
 					<Add directory="/usr/local/include"/>
@@ -77,6 +78,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/configuration"/>
 					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include"/>
 					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/glm/.."/>
 					<Add directory="/usr/local/include"/>
@@ -100,6 +102,7 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/configuration"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
@@ -121,6 +124,7 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/configuration"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
@@ -169,6 +173,9 @@
 		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/src/Shader.h">
 			<Option target="main"/>
 		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/src/filesystem.h">
+			<Option target="main"/>
+		</Unit>
 		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/src/main.cpp">
 			<Option target="main"/>
 		</Unit>
@@ -192,6 +199,9 @@
 		</Unit>
 		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/../../../../../../usr/local/lib/cmake/glfw3/glfw3Targets.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\glfw3\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/configuration/root_directory.h.in">
+			<Option virtualFolder="CMake Files\configuration\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

@@ -1,62 +1,63 @@
-#include "../include/glad/glad.h"
-#include "../include/stb_image.h"
-#include "Shader.h"
-#include "Camera.h"
-#include "Model.h"
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <iostream>
+#include <stb_image.h>
+
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
+#include <iostream>
 #include <unistd.h>
-#include <assimp/Importer.hpp>
-#include <assimp/postprocess.h>
+#include <map>
+#include "Camera.h"
+#include "Shader.h"
+#include "filesystem.h"
 
-void framebuffer_size_callback(__attribute__((unused)) GLFWwindow *window, int width, int height);
-
-void processInput(GLFWwindow *window);
+void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 
 void mouse_callback(GLFWwindow *window, double xpos, double ypos);
 
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
+
+void processInput(GLFWwindow *window);
+
 unsigned int loadTexture(const char *path);
 
+void DrawTwoContainers(Shader shader, int cubeVAO, int cubeTexture, float scale);
+
+
 // settings
-const unsigned int SCR_WIDTH = 1920;
-const unsigned int SCR_HEIGHT = 1080;
+const unsigned int SCR_WIDTH = 800;
+const unsigned int SCR_HEIGHT = 600;
 
 // camera
-Camera camera(glm::vec3(0.0f, 0.0f, 10.0f));
-float lastX = SCR_WIDTH / 2.0f;
-float lastY = SCR_HEIGHT / 2.0f;
+Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+float lastX = (float) SCR_WIDTH / 2.0;
+float lastY = (float) SCR_HEIGHT / 2.0;
 bool firstMouse = true;
 
 // timing
-float deltaTime = 0.0f;    // time between current frame and last frame
+float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
+long frameTotal = 0;
 
 int main() {
-    stbi_set_flip_vertically_on_load(true);
-
+    // glfw: initialize and configure
+    // ------------------------------
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+#ifdef __APPLE__
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+#endif
 
-    GLFWmonitor *primary = glfwGetPrimaryMonitor();
-    const GLFWvidmode *mode = glfwGetVideoMode(primary);
-
-    glfwWindowHint(GLFW_RED_BITS, mode->redBits);
-    glfwWindowHint(GLFW_GREEN_BITS, mode->greenBits);
-    glfwWindowHint(GLFW_BLUE_BITS, mode->blueBits);
-    std::cout << mode->refreshRate << std::endl;
-    glfwWindowHint(GLFW_REFRESH_RATE, mode->refreshRate);
-
-    GLFWwindow *window = glfwCreateWindow(mode->width, mode->height, "My Title", nullptr, NULL);
-
-//    GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", primary, nullptr);
-    if (window == nullptr) {
+    // glfw window creation
+    // --------------------
+    GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
+    if (window == NULL) {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
         return -1;
@@ -64,144 +65,252 @@ int main() {
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     glfwSetCursorPosCallback(window, mouse_callback);
+//    glfwSetScrollCallback(window, scroll_callback);
 
+    // tell GLFW to capture our mouse
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
+    // glad: load all OpenGL function pointers
+    // ---------------------------------------
     if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress)) {
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
 
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-    glfwSetScrollCallback(window, scroll_callback);
-    glfwSwapInterval(-10);
+    // configure global opengl state
+    // -----------------------------
     glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
+    glEnable(GL_STENCIL_TEST);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_CULL_FACE);
+    glFrontFace(GL_CCW);
 
-    Assimp::Importer importer;
-    std::string path = "";
-    const aiScene *scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);
 
+    // generate texture
+    unsigned int texColorBuffer;
+    glGenTextures(1, &texColorBuffer);
+    glBindTexture(GL_TEXTURE_2D, texColorBuffer);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 800, 600, 0, GL_RGB, GL_UNSIGNED_BYTE, nullptr);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glBindTexture(GL_TEXTURE_2D, 0);
 
-    unsigned int diffuseMap = loadTexture("assets/container2.png");
-    unsigned int specularMap = loadTexture("assets/container2_specular.png");
-    Shader lightingShader("lighting.vertex.glsl", "lighting.fragment.glsl");
-    lightingShader.use();
-    lightingShader.setInt("material.diffuse",  0);
-    lightingShader.setInt("material.specular",  1);
-    lightingShader.setVec3("lightColor",  1.0f, 1.0f, 1.0f);
-    glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+    // attach it to currently bound framebuffer object
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texColorBuffer, 0);
 
-    Shader lightCubeShader("lightCube.vertex.glsl", "lightCube.fragment.glsl");
+    unsigned int rbo;
+    glGenRenderbuffers(1, &rbo);
+    glBindRenderbuffer(GL_RENDERBUFFER, rbo);
+    glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, 800, 600);
+    glBindRenderbuffer(GL_RENDERBUFFER, 0);
 
-    unsigned int frameTotal = 0;
-    float l = 0;
-    int targetFrameRate = 30;
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
 
-    glm::vec3 pointLightPositions[] = {
-            glm::vec3( 0.7f,  0.2f,  2.0f),
-            glm::vec3( 2.3f, -3.3f, -4.0f),
-            glm::vec3(-4.0f,  2.0f, -12.0f),
-            glm::vec3( 0.0f,  0.0f, -3.0f)
+    if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+        std::cout << "Error incomplete frame buffer";
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+    // build and compile shaders
+    // -------------------------
+    Shader normalShader("lighting.vertex.glsl", "lighting.fragment.glsl");
+    Shader colorShader("lighting.vertex.glsl", "shaderSingleColor.fragment.glsl");
+
+    // set up vertex data (and buffer(s)) and configure vertex attributes
+    // ------------------------------------------------------------------
+    float cubeVertices[] = {
+            // Back face
+            -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, // Bottom-left
+            0.5f,  0.5f, -0.5f,  1.0f, 1.0f, // top-right
+            0.5f, -0.5f, -0.5f,  1.0f, 0.0f, // bottom-right
+            0.5f,  0.5f, -0.5f,  1.0f, 1.0f, // top-right
+            -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, // bottom-left
+            -0.5f,  0.5f, -0.5f,  0.0f, 1.0f, // top-left
+            // Front face
+            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, // bottom-left
+            0.5f, -0.5f,  0.5f,  1.0f, 0.0f, // bottom-right
+            0.5f,  0.5f,  0.5f,  1.0f, 1.0f, // top-right
+            0.5f,  0.5f,  0.5f,  1.0f, 1.0f, // top-right
+            -0.5f,  0.5f,  0.5f,  0.0f, 1.0f, // top-left
+            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, // bottom-left
+            // Left face
+            -0.5f,  0.5f,  0.5f,  1.0f, 0.0f, // top-right
+            -0.5f,  0.5f, -0.5f,  1.0f, 1.0f, // top-left
+            -0.5f, -0.5f, -0.5f,  0.0f, 1.0f, // bottom-left
+            -0.5f, -0.5f, -0.5f,  0.0f, 1.0f, // bottom-left
+            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, // bottom-right
+            -0.5f,  0.5f,  0.5f,  1.0f, 0.0f, // top-right
+            // Right face
+            0.5f,  0.5f,  0.5f,  1.0f, 0.0f, // top-left
+            0.5f, -0.5f, -0.5f,  0.0f, 1.0f, // bottom-right
+            0.5f,  0.5f, -0.5f,  1.0f, 1.0f, // top-right
+            0.5f, -0.5f, -0.5f,  0.0f, 1.0f, // bottom-right
+            0.5f,  0.5f,  0.5f,  1.0f, 0.0f, // top-left
+            0.5f, -0.5f,  0.5f,  0.0f, 0.0f, // bottom-left
+            // Bottom face
+            -0.5f, -0.5f, -0.5f,  0.0f, 1.0f, // top-right
+            0.5f, -0.5f, -0.5f,  1.0f, 1.0f, // top-left
+            0.5f, -0.5f,  0.5f,  1.0f, 0.0f, // bottom-left
+            0.5f, -0.5f,  0.5f,  1.0f, 0.0f, // bottom-left
+            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, // bottom-right
+            -0.5f, -0.5f, -0.5f,  0.0f, 1.0f, // top-right
+            // Top face
+            -0.5f,  0.5f, -0.5f,  0.0f, 1.0f, // top-left
+            0.5f,  0.5f,  0.5f,  1.0f, 0.0f, // bottom-right
+            0.5f,  0.5f, -0.5f,  1.0f, 1.0f, // top-right
+            0.5f,  0.5f,  0.5f,  1.0f, 0.0f, // bottom-right
+            -0.5f,  0.5f, -0.5f,  0.0f, 1.0f, // top-left
+            -0.5f,  0.5f,  0.5f,  0.0f, 0.0f  // bottom-left
     };
-    Model ourModel("assets/backpack/backpack.obj");
+    float planeVertices[] = {
+            // positions          // texture Coords (note we set these higher than 1 (together with GL_REPEAT as texture wrapping mode). this will cause the floor texture to repeat)
+            -5.0f, -0.5f, 5.0f, 0.0f, 0.0f,
+            5.0f, -0.5f, 5.0f, 2.0f, 0.0f,
+            -5.0f, -0.5f, -5.0f, 0.0f, 2.0f,
+
+            -5.0f, -0.5f, -5.0f, 0.0f, 2.0f,
+            5.0f, -0.5f, 5.0f, 2.0f, 0.0f,
+            5.0f, -0.5f, -5.0f, 2.0f, 2.0f
+    };
+    // cube VAO
+    unsigned int cubeVAO, cubeVBO;
+    glGenVertexArrays(1, &cubeVAO);
+    glGenBuffers(1, &cubeVBO);
+    glBindVertexArray(cubeVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, cubeVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(cubeVertices), &cubeVertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *) 0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *) (3 * sizeof(float)));
+    glBindVertexArray(0);
+    // plane VAO
+    unsigned int planeVAO, planeVBO;
+    glGenVertexArrays(1, &planeVAO);
+    glGenBuffers(1, &planeVBO);
+    glBindVertexArray(planeVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, planeVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(planeVertices), &planeVertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *) 0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *) (3 * sizeof(float)));
+    glBindVertexArray(0);
+
+    // load textures
+    // -------------
+    unsigned int cubeTexture = loadTexture(FileSystem::getPath("resources/textures/marble.jpg").c_str());
+    unsigned int floorTexture = loadTexture(FileSystem::getPath("resources/textures/metal.png").c_str());
+    unsigned int grassTexture = loadTexture(FileSystem::getPath("resources/textures/blending_transparent_window.png").c_str());
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+    // normalShader configuration
+    // --------------------
+    normalShader.use();
+    normalShader.setInt("texture1", 0);
+
+    std::vector<glm::vec3> windows;
+    windows.push_back(glm::vec3(-1.5f, 0.0f, -0.48f));
+    windows.push_back(glm::vec3(1.5f, 0.0f, 0.51f));
+    windows.push_back(glm::vec3(0.0f, 0.0f, 0.7f));
+    windows.push_back(glm::vec3(-0.3f, 0.0f, -2.3f));
+    windows.push_back(glm::vec3(0.5f, 0.0f, -0.6f));
+
+    float grassVertices[] = {
+            // positions         // texture Coords (swapped y coordinates because texture is flipped upside down)
+            0.0f, 0.5f, 0.0f, 0.0f, 0.0f,
+            0.0f, -0.5f, 0.0f, 0.0f, 1.0f,
+            1.0f, -0.5f, 0.0f, 1.0f, 1.0f,
+
+            0.0f, 0.5f, 0.0f, 0.0f, 0.0f,
+            1.0f, -0.5f, 0.0f, 1.0f, 1.0f,
+            1.0f, 0.5f, 0.0f, 1.0f, 0.0f
+    };
+    unsigned int vegetationVAO, grassVBO;
+    glGenVertexArrays(1, &vegetationVAO);
+    glGenBuffers(1, &grassVBO);
+    glBindVertexArray(vegetationVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, grassVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(grassVertices), &grassVertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *) 0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *) (3 * sizeof(float)));
+    glBindVertexArray(0);
+    // render loop
+    // -----------
     while (!glfwWindowShouldClose(window)) {
+        // per-frame time logic
+        // --------------------
         float currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
-
+        // input
+        // -----
         processInput(window);
 
-        glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        // render
+        // ------
+        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
-        glActiveTexture(GL_TEXTURE0); // activate the texture unit first before binding texture
-        glBindTexture(GL_TEXTURE_2D, diffuseMap);
-        glActiveTexture(GL_TEXTURE1); // activate the texture unit first before binding texture
-        glBindTexture(GL_TEXTURE_2D, specularMap);
-
-        lightingShader.use();
-//        lightPos.x = sin(lastFrame)*3;
-//        lightPos.y = cos(lastFrame)*3;
-        lightingShader.setVec3("lightPos",  lightPos);
-
-        // pass projection matrix to shader (note that in this case it could change every frame)
+        glm::mat4 model = glm::mat4(1.0f);
+        glm::mat4 view = camera.GetViewMatrix();
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float) SCR_WIDTH / (float) SCR_HEIGHT, 0.1f,
                                                 100.0f);
-        lightingShader.setMat4("projection", projection);
 
-        // camera/view transformation
-        glm::mat4 view = camera.GetViewMatrix();
-        lightingShader.setMat4("view", view);
-        lightingShader.setVec3("viewPos", camera.Position);
-        lightingShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
-        lightingShader.setFloat("material.shininess", 32.0f);
+        glStencilMask(0x00);
+        // floor
+        glBindVertexArray(planeVAO);
+        glBindTexture(GL_TEXTURE_2D, floorTexture);
+        normalShader.use();
+        normalShader.setMat4("model", glm::mat4(1.0f));
+        normalShader.setMat4("view", view);
+        normalShader.setMat4("projection", projection);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(0);
 
-        glm::vec3 diffuseColor = glm::vec3(1.0, 1.0, 1.0);
-        glm::vec3 ambientColor = diffuseColor * glm::vec3(0.2f);
-        lightingShader.setVec3("dirLight.ambient",  ambientColor);
-        lightingShader.setVec3("dirLight.diffuse",  diffuseColor);
-        lightingShader.setVec3("dirLight.specular", 1.0f, 1.0f, 1.0f);
-        lightingShader.setVec3("dirLight.direction", glm::vec3(-0.2, -0.3, 0.0));
-        lightingShader.setVec3("dirLight.direction", glm::vec3(-0.2, -0.3, 0.0));
+        glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
+        glStencilFunc(GL_ALWAYS, 1, 0xFF); // all fragments should pass the stencil test
+        glStencilMask(0xFF); // enable writing to the stencil buffer
+        DrawTwoContainers(normalShader, cubeVAO, cubeTexture, 1.0f);
 
-        lightingShader.setVec3("spotLight.ambient",  ambientColor);
-        lightingShader.setVec3("spotLight.diffuse",  diffuseColor);
-        lightingShader.setVec3("spotLight.specular", 1.0f, 1.0f, 1.0f);
+        glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
+        glStencilMask(0x00); // enable writing to the stencil buffer
+        glDisable(GL_DEPTH_TEST);
+        DrawTwoContainers(colorShader, cubeVAO, cubeTexture, 1.1f);
+        glStencilMask(0xFF);
+        glStencilFunc(GL_ALWAYS, 1, 0xFF);
+        glEnable(GL_DEPTH_TEST);
 
-        lightingShader.setVec3("spotLight.position",  camera.Position);
-        lightingShader.setVec3("spotLight.position",  camera.Position);
-        lightingShader.setVec3("spotLight.direction", camera.Front);
-        lightingShader.setFloat("spotLight.cutOff",   glm::cos(glm::radians(12.5f)));
-        lightingShader.setFloat("spotLight.outerCutOff",   glm::cos(glm::radians(17.5f)));
-
-        for (int i = 0; i < 4; i++) {
-            char lightPropertyString[23]; // enough to hold all numbers up to 64-bits
-            sprintf(lightPropertyString, "pointLights[%d].%s", i, "position");
-            lightingShader.setVec3(lightPropertyString, pointLightPositions[i]);
-            sprintf(lightPropertyString, "pointLights[%d].%s", i, "constant");
-            lightingShader.setFloat(lightPropertyString, 1.0f);
-            sprintf(lightPropertyString, "pointLights[%d].%s", i, "linear");
-            lightingShader.setFloat(lightPropertyString, 0.20f);
-            sprintf(lightPropertyString, "pointLights[%d].%s", i, "quadratic");
-            lightingShader.setFloat(lightPropertyString, 0.22f);
-            sprintf(lightPropertyString, "pointLights[%d].%s", i, "ambient");
-            lightingShader.setVec3(lightPropertyString, glm::vec3(1.0, 1.0, 1.0));
-            sprintf(lightPropertyString, "pointLights[%d].%s", i, "diffuse");
-            lightingShader.setVec3(lightPropertyString, glm::vec3(1.0, 1.0, 1.0));
-            sprintf(lightPropertyString, "pointLights[%d].%s", i, "specular");
-            lightingShader.setVec3(lightPropertyString, glm::vec3(1.0, 1.0, 1.0));
-
+        glBindVertexArray(vegetationVAO);
+        glBindTexture(GL_TEXTURE_2D, grassTexture);
+        std::map<float, glm::vec3> sorted;
+        for (unsigned int i = 0; i < windows.size(); i++)
+        {
+            float distance = glm::length(camera.Position - windows[i]);
+            sorted[distance] = windows[i];
         }
-        // render the loaded model
-        glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
-        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
-        lightingShader.setMat4("model", model);
-        ourModel.Draw(lightingShader);
-
-
-        lightCubeShader.use();
-        for (int i = 0; i < 4; i++) {
-
-            glm::mat4 model = glm::mat4(1.0f);
-            model = glm::translate(model, pointLightPositions[i]);
-            model = glm::scale(model, glm::vec3(0.02f));
-            lightCubeShader.setMat4("projection", projection);
-            lightCubeShader.setMat4("view", view);
-            lightCubeShader.setMat4("model", model);
-            lightCubeShader.setVec3("cubeColor", glm::vec3(0, 1.0, 0));
-//            glBindVertexArray(lightCubeVAO);
-            glDrawArrays(GL_TRIANGLES, 0, 36);
+        normalShader.use();
+        for(auto it = sorted.rbegin(); it != sorted.rend(); ++it) {
+            model = glm::mat4(1.0f);
+            model = glm::translate(model, it->second);
+            normalShader.setMat4("model", model);
+            glDrawArrays(GL_TRIANGLES, 0, 6);
         }
-
+        // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
+        // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
         glfwPollEvents();
-
-        double wait_time = 1.0 / (targetFrameRate);
+        double wait_time = 1.0 / (30);
         double curr_frame_time = glfwGetTime() - lastFrame;
-        double dur = 1000.0 * ( wait_time - curr_frame_time );
-        if( dur > 0 ) // ensures that we don't have a dur > 0.0 which converts to a durDW of 0.
+        double dur = 1000.0 * (wait_time - curr_frame_time);
+        if (dur > 0) // ensures that we don't have a dur > 0.0 which converts to a durDW of 0.
         {
-            usleep((int)dur*1000);
+            usleep((int) dur * 1000);
         }
         if ((int) glfwGetTime() != (int) lastFrame) {
             std::cout << "FPS: " << frameTotal << "   " << currentFrame << std::endl;
@@ -210,11 +319,43 @@ int main() {
         frameTotal += 1;
     }
 
+    // optional: de-allocate all resources once they've outlived their purpose:
+    // ------------------------------------------------------------------------
+    glDeleteVertexArrays(1, &cubeVAO);
+    glDeleteVertexArrays(1, &planeVAO);
+    glDeleteBuffers(1, &cubeVBO);
+    glDeleteBuffers(1, &planeVBO);
 
     glfwTerminate();
     return 0;
 }
 
+void DrawTwoContainers(Shader shader, int cubeVAO, int cubeTexture, float scale) {
+
+    shader.use();
+    glm::mat4 model = glm::mat4(1.0f);
+    glm::mat4 view = camera.GetViewMatrix();
+    glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float) SCR_WIDTH / (float) SCR_HEIGHT, 0.1f,
+                                            100.0f);
+    shader.setMat4("view", view);
+    shader.setMat4("projection", projection);
+    // cubes
+    glBindVertexArray(cubeVAO);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, cubeTexture);
+    model = glm::translate(model, glm::vec3(-1.0f, 0.01f, -1.0f));
+    model = glm::scale(model, glm::vec3(scale));
+    shader.setMat4("model", model);
+    glDrawArrays(GL_TRIANGLES, 0, 36);
+    model = glm::mat4(1.0f);
+    model = glm::translate(model, glm::vec3(2.0f, 0.01f, 0.0f));
+    model = glm::scale(model, glm::vec3(scale));
+    shader.setMat4("model", model);
+    glDrawArrays(GL_TRIANGLES, 0, 36);
+}
+
+// process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
+// ---------------------------------------------------------------------------------------------------------
 void processInput(GLFWwindow *window) {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
@@ -229,7 +370,11 @@ void processInput(GLFWwindow *window) {
         camera.ProcessKeyboard(RIGHT, deltaTime);
 }
 
-void framebuffer_size_callback(__attribute__((unused)) GLFWwindow *window, int width, int height) {
+// glfw: whenever the window size changed (by OS or user resize) this callback function executes
+// ---------------------------------------------------------------------------------------------
+void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
+    // make sure the viewport matches the new window dimensions; note that width and
+    // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
 }
 
@@ -256,17 +401,16 @@ void mouse_callback(GLFWwindow *window, double xpos, double ypos) {
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset) {
     camera.ProcessMouseScroll(yoffset);
 }
+
 // utility function for loading a 2D texture from file
 // ---------------------------------------------------
-unsigned int loadTexture(char const * path)
-{
+unsigned int loadTexture(char const *path) {
     unsigned int textureID;
     glGenTextures(1, &textureID);
 
     int width, height, nrComponents;
     unsigned char *data = stbi_load(path, &width, &height, &nrComponents, 0);
-    if (data)
-    {
+    if (data) {
         GLenum format;
         if (nrComponents == 1)
             format = GL_RED;
@@ -285,9 +429,7 @@ unsigned int loadTexture(char const * path)
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
         stbi_image_free(data);
-    }
-    else
-    {
+    } else {
         std::cout << "Texture failed to load at path: " << path << std::endl;
         stbi_image_free(data);
     }
