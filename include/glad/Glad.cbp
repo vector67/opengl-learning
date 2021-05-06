@@ -5,7 +5,7 @@
 		<Option title="Glad"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\include\;CMake Files\include\assimp\;CMake Files\include\assimp\include\;CMake Files\include\assimp\include\assimp\;CMake Files\include\assimp\cmake-modules\;CMake Files\include\assimp\cmake\;CMake Files\include\assimp\code\;CMake Files\include\assimp\tools\;CMake Files\include\assimp\tools\assimp_cmd\;CMake Files\include\assimp\test\;CMake Files\include\assimp\test\headercheck\;CMake Files\include\glad\;CMake Files\include\glm\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\glfw3\;CMake Files\configuration\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\include\;CMake Files\include\assimp\;CMake Files\include\assimp\include\;CMake Files\include\assimp\include\assimp\;CMake Files\include\assimp\cmake-modules\;CMake Files\include\assimp\cmake\;CMake Files\include\assimp\code\;CMake Files\include\assimp\tools\;CMake Files\include\assimp\tools\assimp_cmd\;CMake Files\include\assimp\test\;CMake Files\include\assimp\test\headercheck\;CMake Files\include\glad\;CMake Files\include\glm\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\glfw3\;CMake Files\configuration\;CMake Files\src\;CMake Files\src\marchingCubes\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/glad"/>
@@ -131,6 +131,9 @@
 		</Unit>
 		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/configuration/root_directory.h.in">
 			<Option virtualFolder="CMake Files\configuration\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\marchingCubes\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

@@ -27,12 +27,19 @@ struct Texture {
 class Mesh {
 public:
     // mesh data
-    std::vector<Vertex>       vertices;
-    std::vector<unsigned int> indices;
-    std::vector<Texture>      textures;
+    Vertex *vertices;
+    unsigned int numVertices;
+    unsigned int *indices;
+    unsigned int numIndices;
+    Texture *textures;
+    unsigned int numTextures;
 
-    Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures);
+    Mesh(Vertex *vertices, unsigned int numVertices,
+         unsigned int *indices, unsigned int numIndices,
+         Texture *textures, unsigned int numTextures);
+
     void Draw(Shader &shader);
+
 private:
     //  render data
     unsigned int VAO, VBO, EBO;

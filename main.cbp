@@ -5,7 +5,7 @@
 		<Option title="main"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\include\;CMake Files\include\assimp\;CMake Files\include\assimp\include\;CMake Files\include\assimp\include\assimp\;CMake Files\include\assimp\cmake-modules\;CMake Files\include\assimp\cmake\;CMake Files\include\assimp\code\;CMake Files\include\assimp\tools\;CMake Files\include\assimp\tools\assimp_cmd\;CMake Files\include\assimp\test\;CMake Files\include\assimp\test\headercheck\;CMake Files\include\glad\;CMake Files\include\glm\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\glfw3\;CMake Files\configuration\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\include\;CMake Files\include\assimp\;CMake Files\include\assimp\include\;CMake Files\include\assimp\include\assimp\;CMake Files\include\assimp\cmake-modules\;CMake Files\include\assimp\cmake\;CMake Files\include\assimp\code\;CMake Files\include\assimp\tools\;CMake Files\include\assimp\tools\assimp_cmd\;CMake Files\include\assimp\test\;CMake Files\include\assimp\test\headercheck\;CMake Files\include\glad\;CMake Files\include\glm\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\glfw3\;CMake Files\configuration\;CMake Files\src\;CMake Files\src\marchingCubes\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl"/>
@@ -435,6 +435,48 @@
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/glm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/glm/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/glm/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="marchingCubes">
+				<Option output="/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes/libmarchingCubes.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes/Makefile&quot;  VERBOSE=1 marchingCubes"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="marchingCubes/fast">
+				<Option output="/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes/libmarchingCubes.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes/Makefile&quot;  VERBOSE=1 marchingCubes/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
@@ -3691,6 +3733,18 @@
 		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/src/main.cpp">
 			<Option target="main"/>
 		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes/CIsoSurface.cpp">
+			<Option target="marchingCubes"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes/CIsoSurface.h">
+			<Option target="marchingCubes"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes/Vectors.cpp">
+			<Option target="marchingCubes"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes/Vectors.h">
+			<Option target="marchingCubes"/>
+		</Unit>
 		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
@@ -3756,6 +3810,9 @@
 		</Unit>
 		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/configuration/root_directory.h.in">
 			<Option virtualFolder="CMake Files\configuration\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/src/marchingCubes/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\marchingCubes\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

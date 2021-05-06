@@ -48,6 +48,12 @@ public:
 	// valid.
 	int GetVolumeLengths(float& fVolLengthX, float& fVolLengthY, float& fVolLengthZ);
 
+	POINT3D* getVertices();
+    unsigned int getNumVertices();
+	unsigned int* getTriangleIndices();
+	unsigned int getNumTriangles();
+    VECTOR3D *getMPvec3DNormals() const;
+
 protected:
 	// The number of vertices which make up the isosurface.
 	unsigned int m_nVertices;
@@ -67,7 +73,7 @@ protected:
 	// The normals.
 	VECTOR3D* m_pvec3dNormals;
 
-	// List of POINT3Ds which form the isosurface.
+    // List of POINT3Ds which form the isosurface.
 	ID2POINT3DID m_i2pt3idVertices;
 
 	// List of TRIANGLES which form the triangulation of the isosurface.
@@ -111,7 +117,7 @@ protected:
 
 	// Lookup tables used in the construction of the isosurface.
 	static const unsigned int m_edgeTable[256];
-	static const unsigned int m_triTable[256][16];
+	static const int m_triTable[256][16];
 };
 #endif // CISOSURFACE_H
 

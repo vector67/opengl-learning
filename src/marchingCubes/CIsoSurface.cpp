@@ -6,7 +6,6 @@
 //
 // Description: This is the implementation file for the CIsoSurface class.
 
-#include "stdafx.h"
 #include <math.h>
 #include "CIsoSurface.h"
 
@@ -45,7 +44,7 @@ template <class T> const unsigned int CIsoSurface<T>::m_edgeTable[256] = {
 	0x70c, 0x605, 0x50f, 0x406, 0x30a, 0x203, 0x109, 0x0
 };
 
-template <class T> const unsigned int CIsoSurface<T>::m_triTable[256][16] = {
+template <class T> const int CIsoSurface<T>::m_triTable[256][16] = {
 	{-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
 	{0, 8, 3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
 	{0, 1, 9, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
@@ -315,10 +314,10 @@ template <class T> CIsoSurface<T>::CIsoSurface()
 	m_nTriangles = 0;
 	m_nNormals = 0;
 	m_nVertices = 0;
-	m_ppt3dVertices = NULL;
-	m_piTriangleIndices = NULL;
-	m_pvec3dNormals = NULL;
-	m_ptScalarField = NULL;
+	m_ppt3dVertices = nullptr;
+	m_piTriangleIndices = nullptr;
+	m_pvec3dNormals = nullptr;
+	m_ptScalarField = nullptr;
 	m_tIsoLevel = 0;
 	m_bValidSurface = false;
 }
@@ -681,7 +680,7 @@ template <class T> void CIsoSurface<T>::RenameVerticesAndTriangles()
 	vecIterator = m_trivecTriangles.begin();
 	m_nTriangles = m_trivecTriangles.size();
 	m_piTriangleIndices = new unsigned int[m_nTriangles*3];
-	for (i = 0; i < m_nTriangles; i++, vecIterator++) {
+	for (unsigned int i = 0; i < m_nTriangles; i++, vecIterator++) {
 		m_piTriangleIndices[i*3] = (*vecIterator).pointID[0];
 		m_piTriangleIndices[i*3+1] = (*vecIterator).pointID[1];
 		m_piTriangleIndices[i*3+2] = (*vecIterator).pointID[2];
@@ -704,7 +703,7 @@ template <class T> void CIsoSurface<T>::CalculateNormals()
 	}
 
 	// Calculate normals.
-	for (i = 0; i < m_nTriangles; i++) {
+	for (unsigned int i = 0; i < m_nTriangles; i++) {
 		VECTOR3D vec1, vec2, normal;
 		unsigned int id0, id1, id2;
 		id0 = m_piTriangleIndices[i*3];
@@ -731,12 +730,37 @@ template <class T> void CIsoSurface<T>::CalculateNormals()
 	}
 
 	// Normalize normals.
-	for (i = 0; i < m_nNormals; i++) {
+	for (unsigned int i = 0; i < m_nNormals; i++) {
 		float length = sqrt(m_pvec3dNormals[i][0]*m_pvec3dNormals[i][0] + m_pvec3dNormals[i][1]*m_pvec3dNormals[i][1] + m_pvec3dNormals[i][2]*m_pvec3dNormals[i][2]);
 		m_pvec3dNormals[i][0] /= length;
 		m_pvec3dNormals[i][1] /= length;
 		m_pvec3dNormals[i][2] /= length;
 	}
+}
+
+template<class T>
+POINT3D *CIsoSurface<T>::getVertices() {
+    return m_ppt3dVertices;
+}
+
+template<class T>
+unsigned int *CIsoSurface<T>::getTriangleIndices() {
+    return m_piTriangleIndices;
+}
+
+template<class T>
+unsigned int CIsoSurface<T>::getNumVertices() {
+    return m_nVertices;
+}
+
+template<class T>
+unsigned int CIsoSurface<T>::getNumTriangles() {
+    return m_nTriangles;
+}
+
+template<class T>
+VECTOR3D *CIsoSurface<T>::getMPvec3DNormals() const {
+    return m_pvec3dNormals;
 }
 
 template class CIsoSurface<short>;

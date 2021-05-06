@@ -34,6 +34,7 @@ set(ASSIMP_BUILD_STATIC_LIB ON)
 add_subdirectory(include/assimp/)
 add_subdirectory(include/glad)
 add_subdirectory(include/glm)
+add_subdirectory(src/marchingCubes)
 find_package(glfw3 3.3 REQUIRED)
 
 set(CXX_FLAGS "-Wall -std=c++17")
@@ -51,6 +52,7 @@ add_executable(main src/main.cpp src/Shader.cpp src/Shader.h include/stb_image.h
 
 target_include_directories(main PUBLIC include/luajit/src)
 
+target_link_libraries(main PRIVATE marchingCubes)
 
 target_link_libraries(main PRIVATE assimp)
 target_link_libraries(main PRIVATE glad)

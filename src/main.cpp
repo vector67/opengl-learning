@@ -9,11 +9,14 @@
 #include "Shader.h"
 #include "Camera.h"
 #include "filesystem.h"
+#include "marchingCubes/CIsoSurface.h"
+#include "marchingCubes/CIsoSurface.cpp"
+#include "Mesh.h"
 
 extern "C" {
-    #include <lua.h>
-    #include <lualib.h>
-    #include <lauxlib.h>
+#include <lua.h>
+#include <lualib.h>
+#include <lauxlib.h>
 }
 
 #include <stdlib.h>
@@ -29,6 +32,8 @@ void processInput(GLFWwindow *window);
 
 unsigned int loadTexture(const char *path);
 
+float scalarFieldFunction(float x, float y, float z);
+
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -42,6 +47,8 @@ bool firstMouse = true;
 // timing
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
+
+glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
 int main() {
 
@@ -215,6 +222,44 @@ int main() {
             -5.0f, -0.5f, -5.0f, 0.0f, 2.0f,
             5.0f, -0.5f, -5.0f, 2.0f, 2.0f
     };
+    // Create a mesh from a scalar field
+    CIsoSurface<float> surface;
+    int resolution = 120;
+    float cubeSize = 10;
+    int numCells = resolution + 1;
+    float scalarField[numCells * numCells * numCells];
+
+    float cellWidth = cubeSize / float(numCells);
+    float halfWidth = cellWidth * resolution / 2;
+    for (int x = 0; x < numCells; ++x) {
+        for (int y = 0; y < numCells; ++y) {
+            for (int z = 0; z < numCells; ++z) {
+                scalarField[x * numCells * numCells + y * numCells + z] =
+                        scalarFieldFunction(x * cellWidth - halfWidth, y * cellWidth - halfWidth,
+                                            z * cellWidth - halfWidth);
+            }
+        }
+    }
+    surface.GenerateSurface(scalarField, 0, resolution, resolution, resolution, cellWidth, cellWidth, cellWidth);
+    POINT3D *points = surface.getVertices();
+    VECTOR3D *normals = surface.getMPvec3DNormals();
+    unsigned int numVertices = surface.getNumVertices();
+
+    Vertex vertices[numVertices];
+
+    for (i = 0; i < numVertices; i++) {
+        Vertex v{};
+//        std::cout << i << " " << points[i][0] << " " << points[i][1] << " " << points[i][2] << std::endl;
+        v.Position = glm::vec3(points[i][0], points[i][1], points[i][2]);
+        v.Normal = glm::vec3(normals[i][0], normals[i][2], normals[i][2]);
+        v.TexCoords = glm::vec2(0.0, i / numVertices);
+        vertices[i] = v;
+    }
+
+    unsigned int * indices = surface.getTriangleIndices();
+    unsigned int numIndices = surface.getNumTriangles()*3;
+    Mesh marchingCubesMesh(vertices, numVertices, indices, numIndices, nullptr, 0);
+
     float quadVertices[] = { // vertex attributes for a quad that fills the entire screen in Normalized Device Coordinates.
             // positions   // texCoords
             -1.0f, 1.0f, 0.0f, 1.0f,
@@ -310,6 +355,9 @@ int main() {
     // draw as wireframe
 //    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
+
+
+
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window)) {
@@ -342,23 +390,32 @@ int main() {
                                                 100.0f);
         shader.setMat4("view", view);
         shader.setMat4("projection", projection);
+
+
+        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+        shader.setMat4("model", model);
+        shader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
+        shader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
+        shader.setVec3("lightPos", lightPos);
+        shader.setVec3("viewPos", camera.Position);
+        marchingCubesMesh.Draw(shader);
         // cubes
-        glBindVertexArray(cubeVAO);
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, cubeTexture);
-        model = glm::translate(model, glm::vec3(-1.0f, 0.0f, -1.0f));
-        shader.setMat4("model", model);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-        model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(2.0f, 0.0f, 0.0f));
-        shader.setMat4("model", model);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-        // floor
-        glBindVertexArray(planeVAO);
-        glBindTexture(GL_TEXTURE_2D, floorTexture);
-        shader.setMat4("model", glm::mat4(1.0f));
-        glDrawArrays(GL_TRIANGLES, 0, 6);
-        glBindVertexArray(0);
+//        glBindVertexArray(cubeVAO);
+//        glActiveTexture(GL_TEXTURE0);
+//        glBindTexture(GL_TEXTURE_2D, cubeTexture);
+//        model = glm::translate(model, glm::vec3(-1.0f, 0.0f, -1.0f));
+//        shader.setMat4("model", model);
+//        glDrawArrays(GL_TRIANGLES, 0, 36);
+//        model = glm::mat4(1.0f);
+//        model = glm::translate(model, glm::vec3(2.0f, 0.0f, 0.0f));
+//        shader.setMat4("model", model);
+//        glDrawArrays(GL_TRIANGLES, 0, 36);
+//        // floor
+//        glBindVertexArray(planeVAO);
+//        glBindTexture(GL_TEXTURE_2D, floorTexture);
+//        shader.setMat4("model", glm::mat4(1.0f));
+//        glDrawArrays(GL_TRIANGLES, 0, 6);
+//        glBindVertexArray(0);
 
         // now bind back to default framebuffer and draw a quad plane with the attached framebuffer color texture
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -392,6 +449,10 @@ int main() {
 
     glfwTerminate();
     return 0;
+}
+
+float scalarFieldFunction(float x, float y, float z) {
+    return x * x + y * y + z * z - 9;
 }
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
