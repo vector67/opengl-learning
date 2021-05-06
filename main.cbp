@@ -56,6 +56,7 @@
 				<Compiler>
 					<Add directory="/Users/admin/Documents/Project/Learning/opengl/configuration"/>
 					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/luajit/src"/>
 					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/glm/.."/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
@@ -80,6 +81,7 @@
 				<Compiler>
 					<Add directory="/Users/admin/Documents/Project/Learning/opengl/configuration"/>
 					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/luajit/src"/>
 					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/glm/.."/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>

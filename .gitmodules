@@ -1,0 +1,3 @@
+[submodule "include/luajit"]
+	path = include/luajit
+	url = git@github.com:LuaJIT/LuaJIT.git
