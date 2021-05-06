@@ -1,3 +1,6 @@
 [submodule "include/luajit"]
 	path = include/luajit
 	url = git@github.com:LuaJIT/LuaJIT.git
+[submodule "include/assimp"]
+	path = include/assimp
+	url = git@github.com:assimp/assimp.git

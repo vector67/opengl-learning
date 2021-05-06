@@ -5,7 +5,7 @@
 		<Option title="Glad"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\include\;CMake Files\include\glad\;CMake Files\include\glm\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\glfw3\;CMake Files\configuration\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\include\;CMake Files\include\assimp\;CMake Files\include\assimp\include\;CMake Files\include\assimp\include\assimp\;CMake Files\include\assimp\cmake-modules\;CMake Files\include\assimp\cmake\;CMake Files\include\assimp\code\;CMake Files\include\assimp\tools\;CMake Files\include\assimp\tools\assimp_cmd\;CMake Files\include\assimp\test\;CMake Files\include\assimp\test\headercheck\;CMake Files\include\glad\;CMake Files\include\glm\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\glfw3\;CMake Files\configuration\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/glad"/>
@@ -18,13 +18,12 @@
 				</MakeCommands>
 			</Target>
 			<Target title="glad">
-				<Option output="/Users/admin/Documents/Project/Learning/opengl/include/glad/libglad.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/Users/admin/Documents/Project/Learning/opengl/include/glad/libglad.dylib" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/glad"/>
 				<Option object_output="./"/>
-				<Option type="2"/>
+				<Option type="3"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/admin/Documents/Project/Learning/opengl/configuration"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
@@ -40,13 +39,12 @@
 				</MakeCommands>
 			</Target>
 			<Target title="glad/fast">
-				<Option output="/Users/admin/Documents/Project/Learning/opengl/include/glad/libglad.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/Users/admin/Documents/Project/Learning/opengl/include/glad/libglad.dylib" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/glad"/>
 				<Option object_output="./"/>
-				<Option type="2"/>
+				<Option type="3"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/admin/Documents/Project/Learning/opengl/configuration"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
@@ -70,6 +68,48 @@
 		</Unit>
 		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\include\assimp\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/assimp.pc.in">
+			<Option virtualFolder="CMake Files\include\assimp\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/revision.h.in">
+			<Option virtualFolder="CMake Files\include\assimp\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/config.h.in">
+			<Option virtualFolder="CMake Files\include\assimp\include\assimp\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/cmake-modules/FindPkgMacros.cmake">
+			<Option virtualFolder="CMake Files\include\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/cmake-modules/FindRT.cmake">
+			<Option virtualFolder="CMake Files\include\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/cmake-modules/FindZLIB.cmake">
+			<Option virtualFolder="CMake Files\include\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/cmake-modules/PrecompiledHeader.cmake">
+			<Option virtualFolder="CMake Files\include\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/cmake-modules/cmake_uninstall.cmake.in">
+			<Option virtualFolder="CMake Files\include\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/cmake/assimp-plain-config.cmake.in">
+			<Option virtualFolder="CMake Files\include\assimp\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\include\assimp\code\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\include\assimp\tools\assimp_cmd\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\include\assimp\test\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/headercheck/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\include\assimp\test\headercheck\"/>
 		</Unit>
 		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glad/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\include\glad\"/>

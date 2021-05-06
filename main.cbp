@@ -5,13 +5,43 @@
 		<Option title="main"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\include\;CMake Files\include\glad\;CMake Files\include\glm\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\glfw3\;CMake Files\configuration\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\include\;CMake Files\include\assimp\;CMake Files\include\assimp\include\;CMake Files\include\assimp\include\assimp\;CMake Files\include\assimp\cmake-modules\;CMake Files\include\assimp\cmake\;CMake Files\include\assimp\code\;CMake Files\include\assimp\tools\;CMake Files\include\assimp\tools\assimp_cmd\;CMake Files\include\assimp\test\;CMake Files\include\assimp\test\headercheck\;CMake Files\include\glad\;CMake Files\include\glm\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\glfw3\;CMake Files\configuration\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl"/>
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 install"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 clean"/>
@@ -37,16 +67,6 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="run">
-				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 run"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="main">
 				<Option output="/Users/admin/Documents/Project/Learning/opengl/main" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl"/>
@@ -55,8 +75,8 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/admin/Documents/Project/Learning/opengl/configuration"/>
-					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include"/>
 					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/luajit/src"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../include"/>
 					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/glm/.."/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
@@ -80,8 +100,8 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/admin/Documents/Project/Learning/opengl/configuration"/>
-					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include"/>
 					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/luajit/src"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../include"/>
 					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/glm/.."/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
@@ -97,14 +117,247 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="glad">
-				<Option output="/Users/admin/Documents/Project/Learning/opengl/include/glad/libglad.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/glad"/>
+			<Target title="run">
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 run"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="uninstall">
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/assimp"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/Makefile&quot;  VERBOSE=1 uninstall"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="assimp">
+				<Option output="/Users/admin/Documents/Project/Learning/opengl/include/assimp/bin/libassimp.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code"/>
 				<Option object_output="./"/>
-				<Option type="2"/>
+				<Option type="3"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/admin/Documents/Project/Learning/opengl/configuration"/>
+					<Add option="-DASSIMP_BUILD_NO_OWN_ZLIB"/>
+					<Add option="-DASSIMP_BUILD_NO_C4D_IMPORTER"/>
+					<Add option="-DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0"/>
+					<Add option="-DRAPIDJSON_HAS_STDSTRING=1"/>
+					<Add option="-DRAPIDJSON_NOMEMBERITERATORCLASS"/>
+					<Add option="-DASSIMP_BUILD_DLL_EXPORT"/>
+					<Add option="-DOPENDDLPARSER_BUILD"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/."/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../contrib/rapidjson/include"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../contrib"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../contrib/pugixml/src"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../contrib/unzip"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../contrib/openddlparser/include"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../include"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/.."/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Makefile&quot;  VERBOSE=1 assimp"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="assimp/fast">
+				<Option output="/Users/admin/Documents/Project/Learning/opengl/include/assimp/bin/libassimp.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DASSIMP_BUILD_NO_OWN_ZLIB"/>
+					<Add option="-DASSIMP_BUILD_NO_C4D_IMPORTER"/>
+					<Add option="-DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0"/>
+					<Add option="-DRAPIDJSON_HAS_STDSTRING=1"/>
+					<Add option="-DRAPIDJSON_NOMEMBERITERATORCLASS"/>
+					<Add option="-DASSIMP_BUILD_DLL_EXPORT"/>
+					<Add option="-DOPENDDLPARSER_BUILD"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/."/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../contrib/rapidjson/include"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../contrib"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../contrib/pugixml/src"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../contrib/unzip"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../contrib/openddlparser/include"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../include"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/.."/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Makefile&quot;  VERBOSE=1 assimp/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="assimp_cmd">
+				<Option output="/Users/admin/Documents/Project/Learning/opengl/include/assimp/bin/assimp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DASSIMP_BUILD_NO_OWN_ZLIB"/>
+					<Add option="-DASSIMP_BUILD_NO_C4D_IMPORTER"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/."/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/Makefile&quot;  VERBOSE=1 assimp_cmd"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="assimp_cmd/fast">
+				<Option output="/Users/admin/Documents/Project/Learning/opengl/include/assimp/bin/assimp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DASSIMP_BUILD_NO_OWN_ZLIB"/>
+					<Add option="-DASSIMP_BUILD_NO_C4D_IMPORTER"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/."/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/Makefile&quot;  VERBOSE=1 assimp_cmd/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="unit">
+				<Option output="/Users/admin/Documents/Project/Learning/opengl/include/assimp/bin/unit" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DASSIMP_BUILD_NO_OWN_ZLIB"/>
+					<Add option="-DASSIMP_BUILD_NO_C4D_IMPORTER"/>
+					<Add option="-DASSIMP_TEST_MODELS_DIR=&quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/models&quot;"/>
+					<Add option="-DASSIMP_TEST_MODELS_NONBSD_DIR=&quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/models-nonbsd&quot;"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/."/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/gtest/include"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/gtest"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/pugixml/src"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/Makefile&quot;  VERBOSE=1 unit"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="unit/fast">
+				<Option output="/Users/admin/Documents/Project/Learning/opengl/include/assimp/bin/unit" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DASSIMP_BUILD_NO_OWN_ZLIB"/>
+					<Add option="-DASSIMP_BUILD_NO_C4D_IMPORTER"/>
+					<Add option="-DASSIMP_TEST_MODELS_DIR=&quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/models&quot;"/>
+					<Add option="-DASSIMP_TEST_MODELS_NONBSD_DIR=&quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/models-nonbsd&quot;"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/."/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/gtest/include"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/gtest"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/pugixml/src"/>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/../include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/Makefile&quot;  VERBOSE=1 unit/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glad">
+				<Option output="/Users/admin/Documents/Project/Learning/opengl/include/glad/libglad.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/glad"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
@@ -120,13 +373,12 @@
 				</MakeCommands>
 			</Target>
 			<Target title="glad/fast">
-				<Option output="/Users/admin/Documents/Project/Learning/opengl/include/glad/libglad.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/Users/admin/Documents/Project/Learning/opengl/include/glad/libglad.dylib" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/glad"/>
 				<Option object_output="./"/>
-				<Option type="2"/>
+				<Option type="3"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/admin/Documents/Project/Learning/opengl/configuration"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
@@ -141,12 +393,3270 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/glad/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="glm_shared">
+				<Option output="/Users/admin/Documents/Project/Learning/opengl/include/glm/libglm_shared.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/glm"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/glm/.."/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/glm/Makefile&quot;  VERBOSE=1 glm_shared"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/glm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/glm/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/glm/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glm_shared/fast">
+				<Option output="/Users/admin/Documents/Project/Learning/opengl/include/glm/libglm_shared.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/glm"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/admin/Documents/Project/Learning/opengl/include/glm/.."/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/glm/Makefile&quot;  VERBOSE=1 glm_shared/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/glm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/glm/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/admin/Documents/Project/Learning/opengl/include/glm/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/3DS/3DSConverter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/3DS/3DSExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/3DS/3DSExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/3DS/3DSHelper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/3DS/3DSLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/3DS/3DSLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/3MF/3MFXmlTags.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/3MF/D3MFExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/3MF/D3MFExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/3MF/D3MFImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/3MF/D3MFImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/3MF/D3MFOpcPackage.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/3MF/D3MFOpcPackage.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/AC/ACLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/AC/ACLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/AMF/AMFImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/AMF/AMFImporter.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/AMF/AMFImporter_Geometry.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/AMF/AMFImporter_Material.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/AMF/AMFImporter_Node.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/AMF/AMFImporter_Postprocess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/ASE/ASELoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/ASE/ASELoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/ASE/ASEParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/ASE/ASEParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Assbin/AssbinExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Assbin/AssbinExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Assbin/AssbinFileWriter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Assbin/AssbinFileWriter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Assbin/AssbinLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Assbin/AssbinLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Assjson/cencode.c">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Assjson/cencode.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Assjson/json_exporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Assjson/mesh_splitter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Assjson/mesh_splitter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Assxml/AssxmlExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Assxml/AssxmlExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Assxml/AssxmlFileWriter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Assxml/AssxmlFileWriter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/B3D/B3DImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/B3D/B3DImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/BVH/BVHLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/BVH/BVHLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderBMesh.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderBMesh.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderCustomData.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderCustomData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderDNA.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderDNA.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderDNA.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderIntermediate.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderModifier.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderModifier.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderScene.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderScene.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderSceneGen.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderTessellator.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Blender/BlenderTessellator.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/COB/COBLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/COB/COBLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/COB/COBScene.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/CSM/CSMLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/CSM/CSMLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Collada/ColladaExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Collada/ColladaExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Collada/ColladaHelper.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Collada/ColladaHelper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Collada/ColladaLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Collada/ColladaLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Collada/ColladaParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Collada/ColladaParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/DXF/DXFHelper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/DXF/DXFLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/DXF/DXFLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXAnimation.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXBinaryTokenizer.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXCommon.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXCompileConfig.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXConverter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXConverter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXDeformer.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXDocument.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXDocument.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXDocumentUtil.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXDocumentUtil.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXExportNode.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXExportNode.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXExportProperty.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXExportProperty.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXImportSettings.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXMaterial.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXMeshGeometry.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXMeshGeometry.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXModel.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXNodeAttribute.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXProperties.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXProperties.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXTokenizer.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXTokenizer.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXUtil.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/FBX/FBXUtil.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/HMP/HMPFileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/HMP/HMPLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/HMP/HMPLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/HMP/HalfLifeFileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/IFC/IFCBoolean.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/IFC/IFCCurve.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/IFC/IFCGeometry.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/IFC/IFCLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/IFC/IFCLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/IFC/IFCMaterial.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/IFC/IFCOpenings.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/IFC/IFCProfile.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/IFC/IFCReaderGen1_2x3.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/IFC/IFCReaderGen2_2x3.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/IFC/IFCReaderGen_2x3.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/IFC/IFCUtil.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/IFC/IFCUtil.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Irr/IRRLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Irr/IRRLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Irr/IRRMeshLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Irr/IRRMeshLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Irr/IRRShared.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Irr/IRRShared.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/LWO/LWOAnimation.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/LWO/LWOAnimation.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/LWO/LWOBLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/LWO/LWOFileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/LWO/LWOLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/LWO/LWOLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/LWO/LWOMaterial.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/LWS/LWSLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/LWS/LWSLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/M3D/M3DExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/M3D/M3DExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/M3D/M3DImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/M3D/M3DImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/M3D/M3DMaterials.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/M3D/M3DWrapper.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/M3D/M3DWrapper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/M3D/m3d.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MD2/MD2FileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MD2/MD2Loader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MD2/MD2Loader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MD2/MD2NormalTable.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MD3/MD3FileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MD3/MD3Loader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MD3/MD3Loader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MD5/MD5Loader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MD5/MD5Loader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MD5/MD5Parser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MD5/MD5Parser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDC/MDCFileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDC/MDCLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDC/MDCLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDC/MDCNormalTable.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDL/HalfLife/HL1FileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDL/HalfLife/HL1ImportDefinitions.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDL/HalfLife/HL1ImportSettings.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDL/HalfLife/HL1MDLLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDL/HalfLife/HL1MDLLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDL/HalfLife/HL1MeshTrivert.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDL/HalfLife/HalfLifeMDLBaseHeader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDL/HalfLife/LogFunctions.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDL/HalfLife/UniqueNameGenerator.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDL/HalfLife/UniqueNameGenerator.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDL/MDLDefaultColorMap.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDL/MDLFileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDL/MDLLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDL/MDLLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MDL/MDLMaterialLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MMD/MMDCpp14.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MMD/MMDImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MMD/MMDImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MMD/MMDPmdParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MMD/MMDPmxParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MMD/MMDPmxParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MMD/MMDVmdParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MS3D/MS3DLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/MS3D/MS3DLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/NDO/NDOLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/NDO/NDOLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/NFF/NFFLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/NFF/NFFLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/OFF/OFFLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/OFF/OFFLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Obj/ObjExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Obj/ObjExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Obj/ObjFileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Obj/ObjFileImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Obj/ObjFileImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Obj/ObjFileMtlImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Obj/ObjFileMtlImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Obj/ObjFileParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Obj/ObjFileParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Obj/ObjTools.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Ogre/OgreBinarySerializer.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Ogre/OgreBinarySerializer.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Ogre/OgreImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Ogre/OgreImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Ogre/OgreMaterial.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Ogre/OgreParsingUtils.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Ogre/OgreStructs.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Ogre/OgreStructs.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Ogre/OgreXmlSerializer.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Ogre/OgreXmlSerializer.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/OpenGEX/OpenGEXExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/OpenGEX/OpenGEXExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/OpenGEX/OpenGEXImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/OpenGEX/OpenGEXImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/OpenGEX/OpenGEXStructs.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Ply/PlyExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Ply/PlyExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Ply/PlyLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Ply/PlyLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Ply/PlyParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Ply/PlyParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Q3BSP/Q3BSPFileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Q3BSP/Q3BSPFileImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Q3BSP/Q3BSPFileImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Q3BSP/Q3BSPFileParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Q3BSP/Q3BSPFileParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Q3D/Q3DLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Q3D/Q3DLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Raw/RawLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Raw/RawLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/SIB/SIBImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/SIB/SIBImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/SMD/SMDLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/SMD/SMDLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/STEPParser/STEPFileEncoding.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/STEPParser/STEPFileEncoding.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/STEPParser/STEPFileReader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/STEPParser/STEPFileReader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/STL/STLExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/STL/STLExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/STL/STLLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/STL/STLLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Step/StepExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Step/StepExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Terragen/TerragenLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Terragen/TerragenLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Unreal/UnrealLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/Unreal/UnrealLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/X/XFileExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/X/XFileExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/X/XFileHelper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/X/XFileImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/X/XFileImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/X/XFileParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/X/XFileParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/X3D/X3DExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/X3D/X3DExporter.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/X3D/X3DImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/X3D/X3DImporter.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/XGL/XGLLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/XGL/XGLLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF/glTFAsset.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF/glTFAsset.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF/glTFAssetWriter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF/glTFAssetWriter.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF/glTFCommon.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF/glTFCommon.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF/glTFExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF/glTFExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF/glTFImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF/glTFImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF2/glTF2Asset.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF2/glTF2Asset.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF2/glTF2AssetWriter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF2/glTF2AssetWriter.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF2/glTF2Exporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF2/glTF2Exporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF2/glTF2Importer.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/AssetLib/glTF2/glTF2Importer.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/CApi/AssimpCExport.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/CApi/CInterfaceIOWrapper.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/CApi/CInterfaceIOWrapper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/AssertHandler.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/AssertHandler.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/Assimp.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/BaseImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/BaseProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/BaseProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/Bitmap.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/CreateAnimMesh.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/DefaultIOStream.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/DefaultIOSystem.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/DefaultLogger.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/DefaultProgressHandler.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/Exceptional.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/Exporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/FileLogStream.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/IFF.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/Importer.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/Importer.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/ImporterRegistry.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/PolyTools.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/PostStepRegistry.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/RemoveComments.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/SGSpatialSort.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/SceneCombiner.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/ScenePreprocessor.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/ScenePreprocessor.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/ScenePrivate.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/SkeletonMeshBuilder.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/SpatialSort.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/StandardShapes.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/StdOStreamLogStream.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/Subdivision.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/TargetAnimation.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/TargetAnimation.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/Version.cpp">
+			<Option target="assimp"/>
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/VertexTriangleAdjacency.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/VertexTriangleAdjacency.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/Win32DebugLogStream.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/ZipArchiveIOSystem.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/material.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/scene.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/simd.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Common/simd.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Material/MaterialSystem.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Material/MaterialSystem.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Pbrt/PbrtExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/Pbrt/PbrtExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/ArmaturePopulate.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/ArmaturePopulate.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/CalcTangentsProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/CalcTangentsProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/ComputeUVMappingProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/ComputeUVMappingProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/ConvertToLHProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/ConvertToLHProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/DeboneProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/DeboneProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/DropFaceNormalsProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/DropFaceNormalsProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/EmbedTexturesProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/EmbedTexturesProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/FindDegenerates.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/FindDegenerates.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/FindInstancesProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/FindInstancesProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/FindInvalidDataProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/FindInvalidDataProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/FixNormalsStep.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/FixNormalsStep.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/GenBoundingBoxesProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/GenBoundingBoxesProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/GenFaceNormalsProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/GenFaceNormalsProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/GenVertexNormalsProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/GenVertexNormalsProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/ImproveCacheLocality.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/ImproveCacheLocality.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/JoinVerticesProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/JoinVerticesProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/LimitBoneWeightsProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/LimitBoneWeightsProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/MakeVerboseFormat.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/MakeVerboseFormat.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/OptimizeGraph.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/OptimizeGraph.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/OptimizeMeshes.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/OptimizeMeshes.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/PretransformVertices.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/PretransformVertices.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/ProcessHelper.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/ProcessHelper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/RemoveRedundantMaterials.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/RemoveRedundantMaterials.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/RemoveVCProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/RemoveVCProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/ScaleProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/ScaleProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/SortByPTypeProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/SortByPTypeProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/SplitByBoneCountProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/SplitByBoneCountProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/SplitLargeMeshes.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/SplitLargeMeshes.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/TextureTransform.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/TextureTransform.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/TriangulateProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/TriangulateProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/ValidateDataStructure.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/PostProcessing/ValidateDataStructure.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/clipper/clipper.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/clipper/clipper.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/gtest/src/gtest-all.cc">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/openddlparser/code/DDLNode.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/openddlparser/code/OpenDDLCommon.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/openddlparser/code/OpenDDLExport.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/openddlparser/code/OpenDDLParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/openddlparser/code/OpenDDLStream.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/openddlparser/code/Value.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/openddlparser/include/openddlparser/DDLNode.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/openddlparser/include/openddlparser/OpenDDLCommon.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/openddlparser/include/openddlparser/OpenDDLExport.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/openddlparser/include/openddlparser/OpenDDLParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/openddlparser/include/openddlparser/OpenDDLParserUtils.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/openddlparser/include/openddlparser/OpenDDLStream.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/openddlparser/include/openddlparser/Value.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/poly2tri/poly2tri/common/shapes.cc">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/poly2tri/poly2tri/common/shapes.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/poly2tri/poly2tri/common/utils.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/poly2tri/poly2tri/sweep/advancing_front.cc">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/poly2tri/poly2tri/sweep/advancing_front.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/poly2tri/poly2tri/sweep/cdt.cc">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/poly2tri/poly2tri/sweep/cdt.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/poly2tri/poly2tri/sweep/sweep.cc">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/poly2tri/poly2tri/sweep/sweep.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/poly2tri/poly2tri/sweep/sweep_context.cc">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/poly2tri/poly2tri/sweep/sweep_context.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/pugixml/src/pugiconfig.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/pugixml/src/pugixml.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/unzip/crypt.c">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/unzip/crypt.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/unzip/ioapi.c">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/unzip/ioapi.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/unzip/unzip.c">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/unzip/unzip.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/zip/src/miniz.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/zip/src/zip.c">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/contrib/zip/src/zip.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/BaseImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/Bitmap.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/BlobIOSystem.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/ByteSwapper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/ColladaMetaData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/Compiler/poppack1.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/Compiler/pstdint.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/Compiler/pushpack1.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/CreateAnimMesh.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/DefaultIOStream.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/DefaultIOSystem.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/DefaultLogger.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/Defines.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/Exceptional.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/Exporter.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/GenericProperty.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/Hash.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/IOStream.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/IOStreamBuffer.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/IOSystem.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/Importer.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/LineSplitter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/LogAux.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/LogStream.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/Logger.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/MathFunctions.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/MemoryIOWrapper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/NullLogger.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/ParsingUtils.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/Profiler.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/ProgressHandler.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/RemoveComments.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/SGSpatialSort.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/SceneCombiner.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/SkeletonMeshBuilder.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/SmallVector.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/SmoothingGroups.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/SmoothingGroups.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/SpatialSort.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/StandardShapes.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/StreamReader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/StreamWriter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/StringComparison.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/StringUtils.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/Subdivision.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/TinyFormatter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/Vertex.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/XMLTools.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/XmlParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/ZipArchiveIOSystem.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/aabb.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/ai_assert.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/anim.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/camera.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/cexport.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/cfileio.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/cimport.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/color4.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/color4.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/commonMetaData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/config.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/defs.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/fast_atof.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/importerdesc.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/light.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/material.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/material.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/matrix3x3.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/matrix3x3.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/matrix4x4.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/matrix4x4.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/mesh.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/metadata.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/pbrmaterial.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/postprocess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/qnan.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/quaternion.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/quaternion.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/scene.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/texture.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/types.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/vector2.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/vector2.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/vector3.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/vector3.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/version.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/AbstractImportExportBase.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/AbstractImportExportBase.h">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/AssimpAPITest.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/AssimpAPITest_aiMatrix3x3.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/AssimpAPITest_aiMatrix4x4.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/AssimpAPITest_aiQuaternion.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/AssimpAPITest_aiVector2D.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/AssimpAPITest_aiVector3D.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/CCompilerTest.c">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/Common/uiScene.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/Common/utAssertHandler.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/Common/utLineSplitter.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/Common/utSpatialSort.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/Common/utStandardShapes.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/Common/utXmlParser.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/Assxml/utAssxmlImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/MDL/MDLHL1TestFiles.h">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/MDL/utMDLImporter_HL1_ImportSettings.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/MDL/utMDLImporter_HL1_Materials.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/MDL/utMDLImporter_HL1_Nodes.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/RAW/utRAWImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/Terragen/utTerragenImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/utAssjsonImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/utCOBImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/utExporter.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/utMD2Importer.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/utMD3Importer.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/utMD5Importer.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/utMDLImporter.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/utNFFImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/utOFFImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/utOgreImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/utQ3BSPFileImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ImportExport/utXGLImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/Main.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/MathTest.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/MathTest.h">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/RandomNumberGeneration.h">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/SceneDiffer.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/SceneDiffer.h">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/TestIOSystem.h">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/TestModelFactory.h">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/UTLogStream.h">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ut3DImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/ut3DSImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utACImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utAMFImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utASEImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utAnim.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utArmaturePopulate.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utAssbinImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utB3DImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utBVHImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utBatchLoader.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utBlendImportAreaLight.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utBlendImportMaterials.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utBlenderImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utBlenderIntermediate.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utBlenderWork.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utCSMImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utColladaExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utColladaImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utD3MFImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utDXFImporterExporter.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utDefaultIOStream.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utFBXImporterExporter.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utFastAtof.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utFindDegenerates.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utFindInvalidData.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utFixInfacingNormals.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utGenBoundingBoxesProcess.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utGenNormals.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utHMPImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utIFCImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utIOStreamBuffer.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utIOSystem.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utImporter.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utImproveCacheLocality.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utIssues.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utJoinVertices.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utLWOImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utLWSImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utLimitBoneWeights.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utM3DImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utMDCImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utMaterialSystem.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utMatrix3x3.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utMatrix4x4.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utMetadata.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utObjImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utObjTools.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utOpenGEXImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utPLYImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utPMXImporter.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utPretransformVertices.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utProfiler.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utQ3DImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utRemoveComments.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utRemoveComponent.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utRemoveRedundantMaterials.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utRemoveVCProcess.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utSIBImporter.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utSMDImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utSTLImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utScaleProcess.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utSceneCombiner.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utScenePreprocessor.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utSharedPPData.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utSimd.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utSortByPType.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utSplitLargeMeshes.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utStringUtils.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utTargetAnimation.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utTextureTransform.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utTriangulate.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utTypes.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utVector3.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utVersion.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utVertexTriangleAdjacency.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utX3DImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utXImporterExporter.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utglTF2ImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/unit/utglTFImportExport.cpp">
+			<Option target="unit"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/CompareDump.cpp">
+			<Option target="assimp_cmd"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/Export.cpp">
+			<Option target="assimp_cmd"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/ImageExtractor.cpp">
+			<Option target="assimp_cmd"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/Info.cpp">
+			<Option target="assimp_cmd"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/Main.cpp">
+			<Option target="assimp_cmd"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/Main.h">
+			<Option target="assimp_cmd"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/WriteDump.cpp">
+			<Option target="assimp_cmd"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/assimp_cmd.rc">
+			<Option target="assimp_cmd"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/resource.h">
+			<Option target="assimp_cmd"/>
+		</Unit>
 		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glad/glad.c">
 			<Option target="glad"/>
 		</Unit>
 		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glad/glad.h">
 			<Option target="glad"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/common.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/_features.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/_fixes.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/_noise.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/_swizzle.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/_swizzle_func.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/_vectorize.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/compute_common.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/compute_vector_relational.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/func_common.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/func_common_simd.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/func_exponential.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/func_exponential_simd.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/func_geometric.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/func_geometric_simd.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/func_integer.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/func_integer_simd.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/func_matrix.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/func_matrix_simd.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/func_packing.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/func_packing_simd.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/func_trigonometric.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/func_trigonometric_simd.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/func_vector_relational.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/func_vector_relational_simd.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/glm.cpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/qualifier.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/setup.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_float.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_half.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_half.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat2x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat2x2.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat2x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat2x3.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat2x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat2x4.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat3x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat3x2.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat3x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat3x3.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat3x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat3x4.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat4x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat4x2.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat4x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat4x3.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat4x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat4x4.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_mat4x4_simd.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_quat.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_quat.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_quat_simd.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_vec1.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_vec1.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_vec2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_vec2.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_vec3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_vec3.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_vec4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_vec4.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/detail/type_vec4_simd.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/exponential.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_clip_space.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_clip_space.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_common.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_common.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double2x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double2x2_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double2x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double2x3_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double2x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double2x4_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double3x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double3x2_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double3x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double3x3_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double3x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double3x4_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double4x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double4x2_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double4x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double4x3_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double4x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_double4x4_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float2x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float2x2_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float2x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float2x3_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float2x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float2x4_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float3x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float3x2_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float3x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float3x3_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float3x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float3x4_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float4x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float4x2_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float4x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float4x3_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float4x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_float4x4_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int2x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int2x2_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int2x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int2x3_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int2x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int2x4_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int3x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int3x2_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int3x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int3x3_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int3x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int3x4_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int4x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int4x2_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int4x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int4x3_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int4x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_int4x4_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_projection.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_projection.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_relational.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_relational.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_transform.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_transform.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint2x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint2x2_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint2x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint2x3_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint2x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint2x4_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint3x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint3x2_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint3x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint3x3_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint3x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint3x4_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint4x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint4x2_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint4x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint4x3_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint4x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/matrix_uint4x4_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_common.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_common.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_common_simd.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_double.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_double_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_exponential.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_exponential.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_float.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_float_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_geometric.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_geometric.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_relational.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_relational.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_transform.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_transform.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_trigonometric.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/quaternion_trigonometric.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/scalar_common.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/scalar_common.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/scalar_constants.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/scalar_constants.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/scalar_int_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/scalar_integer.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/scalar_integer.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/scalar_packing.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/scalar_packing.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/scalar_relational.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/scalar_relational.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/scalar_uint_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/scalar_ulp.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/scalar_ulp.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_bool1.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_bool1_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_bool2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_bool2_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_bool3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_bool3_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_bool4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_bool4_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_common.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_common.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_double1.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_double1_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_double2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_double2_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_double3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_double3_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_double4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_double4_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_float1.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_float1_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_float2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_float2_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_float3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_float3_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_float4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_float4_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_int1.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_int1_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_int2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_int2_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_int3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_int3_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_int4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_int4_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_integer.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_integer.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_packing.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_packing.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_relational.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_relational.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_uint1.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_uint1_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_uint2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_uint2_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_uint3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_uint3_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_uint4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_uint4_sized.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_ulp.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/ext/vector_ulp.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/fwd.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/geometric.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/glm.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/bitfield.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/bitfield.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/color_space.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/color_space.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/constants.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/constants.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/epsilon.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/epsilon.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/integer.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/integer.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/matrix_access.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/matrix_access.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/matrix_integer.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/matrix_inverse.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/matrix_inverse.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/matrix_transform.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/matrix_transform.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/noise.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/noise.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/packing.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/packing.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/quaternion.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/quaternion.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/quaternion_simd.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/random.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/random.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/reciprocal.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/reciprocal.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/round.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/round.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/type_aligned.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/type_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/type_precision.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/type_ptr.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/type_ptr.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/ulp.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/ulp.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtc/vec1.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/associated_min_max.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/associated_min_max.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/bit.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/bit.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/closest_point.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/closest_point.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/color_encoding.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/color_encoding.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/color_space.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/color_space.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/color_space_YCoCg.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/color_space_YCoCg.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/common.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/common.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/compatibility.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/compatibility.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/component_wise.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/component_wise.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/dual_quaternion.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/dual_quaternion.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/easing.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/easing.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/euler_angles.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/euler_angles.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/extend.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/extend.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/extended_min_max.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/extended_min_max.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/exterior_product.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/exterior_product.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/fast_exponential.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/fast_exponential.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/fast_square_root.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/fast_square_root.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/fast_trigonometry.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/fast_trigonometry.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/float_notmalize.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/functions.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/functions.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/gradient_paint.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/gradient_paint.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/handed_coordinate_space.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/handed_coordinate_space.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/hash.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/hash.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/integer.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/integer.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/intersect.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/intersect.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/io.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/io.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/log_base.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/log_base.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/matrix_cross_product.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/matrix_cross_product.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/matrix_decompose.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/matrix_decompose.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/matrix_factorisation.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/matrix_factorisation.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/matrix_interpolation.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/matrix_interpolation.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/matrix_major_storage.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/matrix_major_storage.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/matrix_operation.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/matrix_operation.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/matrix_query.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/matrix_query.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/matrix_transform_2d.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/matrix_transform_2d.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/mixed_product.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/mixed_product.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/norm.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/norm.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/normal.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/normal.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/normalize_dot.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/normalize_dot.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/number_precision.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/number_precision.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/optimum_pow.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/optimum_pow.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/orthonormalize.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/orthonormalize.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/perpendicular.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/perpendicular.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/polar_coordinates.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/polar_coordinates.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/projection.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/projection.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/quaternion.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/quaternion.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/range.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/raw_data.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/raw_data.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/rotate_normalized_axis.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/rotate_normalized_axis.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/rotate_vector.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/rotate_vector.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/scalar_multiplication.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/scalar_relational.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/scalar_relational.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/spline.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/spline.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/std_based_type.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/std_based_type.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/string_cast.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/string_cast.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/texture.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/texture.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/transform.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/transform.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/transform2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/transform2.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/type_aligned.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/type_aligned.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/type_trait.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/type_trait.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/vec_swizzle.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/vector_angle.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/vector_angle.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/vector_query.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/vector_query.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/wrap.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/gtx/wrap.inl">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/integer.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/mat2x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/mat2x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/mat2x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/mat3x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/mat3x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/mat3x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/mat4x2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/mat4x3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/mat4x4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/matrix.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/packing.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/simd/common.h">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/simd/exponential.h">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/simd/geometric.h">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/simd/integer.h">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/simd/matrix.h">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/simd/neon.h">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/simd/packing.h">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/simd/platform.h">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/simd/trigonometric.h">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/simd/vector_relational.h">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/trigonometric.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/vec2.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/vec3.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/vec4.hpp">
+			<Option target="glm_shared"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/vector_relational.hpp">
+			<Option target="glm_shared"/>
 		</Unit>
 		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/stb_image.cpp">
 			<Option target="main"/>
@@ -183,6 +3693,48 @@
 		</Unit>
 		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\include\assimp\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/assimp.pc.in">
+			<Option virtualFolder="CMake Files\include\assimp\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/revision.h.in">
+			<Option virtualFolder="CMake Files\include\assimp\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/include/assimp/config.h.in">
+			<Option virtualFolder="CMake Files\include\assimp\include\assimp\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/cmake-modules/FindPkgMacros.cmake">
+			<Option virtualFolder="CMake Files\include\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/cmake-modules/FindRT.cmake">
+			<Option virtualFolder="CMake Files\include\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/cmake-modules/FindZLIB.cmake">
+			<Option virtualFolder="CMake Files\include\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/cmake-modules/PrecompiledHeader.cmake">
+			<Option virtualFolder="CMake Files\include\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/cmake-modules/cmake_uninstall.cmake.in">
+			<Option virtualFolder="CMake Files\include\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/cmake/assimp-plain-config.cmake.in">
+			<Option virtualFolder="CMake Files\include\assimp\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/code/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\include\assimp\code\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/tools/assimp_cmd/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\include\assimp\tools\assimp_cmd\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\include\assimp\test\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/assimp/test/headercheck/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\include\assimp\test\headercheck\"/>
 		</Unit>
 		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glad/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\include\glad\"/>
