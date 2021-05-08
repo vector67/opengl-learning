@@ -21,6 +21,7 @@ extern "C" {
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 
@@ -223,27 +224,26 @@ int main() {
             5.0f, -0.5f, -5.0f, 2.0f, 2.0f
     };
     // Create a mesh from a scalar field
-    CIsoSurface<float> surface;
-    int resolution = 120;
+    auto * surface = new CIsoSurface<float>();
+    int resolution = 200;
     float cubeSize = 10;
     int numCells = resolution + 1;
-    float scalarField[numCells * numCells * numCells];
 
     float cellWidth = cubeSize / float(numCells);
     float halfWidth = cellWidth * resolution / 2;
-    for (int x = 0; x < numCells; ++x) {
-        for (int y = 0; y < numCells; ++y) {
-            for (int z = 0; z < numCells; ++z) {
-                scalarField[x * numCells * numCells + y * numCells + z] =
-                        scalarFieldFunction(x * cellWidth - halfWidth, y * cellWidth - halfWidth,
-                                            z * cellWidth - halfWidth);
-            }
-        }
-    }
-    surface.GenerateSurface(scalarField, 0, resolution, resolution, resolution, cellWidth, cellWidth, cellWidth);
-    POINT3D *points = surface.getVertices();
-    VECTOR3D *normals = surface.getMPvec3DNormals();
-    unsigned int numVertices = surface.getNumVertices();
+//    for (int x = 0; x < numCells; ++x) {
+//        for (int y = 0; y < numCells; ++y) {
+//            for (int z = 0; z < numCells; ++z) {
+//                scalarField[x * numCells * numCells + y * numCells + z] =
+//                        scalarFieldFunction(x * cellWidth - halfWidth, y * cellWidth - halfWidth,
+//                                            z * cellWidth - halfWidth);
+//            }
+//        }
+//    }
+    surface->GenerateSurface(scalarFieldFunction, 0, resolution, resolution, resolution, cellWidth, cellWidth, cellWidth);
+    POINT3D *points = surface->getVertices();
+    VECTOR3D *normals = surface->getMPvec3DNormals();
+    unsigned int numVertices = surface->getNumVertices();
 
     Vertex vertices[numVertices];
 
@@ -256,8 +256,8 @@ int main() {
         vertices[i] = v;
     }
 
-    unsigned int * indices = surface.getTriangleIndices();
-    unsigned int numIndices = surface.getNumTriangles()*3;
+    unsigned int * indices = surface->getTriangleIndices();
+    unsigned int numIndices = surface->getNumTriangles()*3;
     Mesh marchingCubesMesh(vertices, numVertices, indices, numIndices, nullptr, 0);
 
     float quadVertices[] = { // vertex attributes for a quad that fills the entire screen in Normalized Device Coordinates.
@@ -357,7 +357,7 @@ int main() {
 
 
 
-
+    long frameTotal = 0;
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window)) {
@@ -436,6 +436,20 @@ int main() {
         // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
         glfwPollEvents();
+
+        double wait_time = 1.0 / (30);
+        double curr_frame_time = glfwGetTime() - lastFrame;
+        double dur = 1000.0 * (wait_time - curr_frame_time);
+        if (dur > 0) // ensures that we don't have a dur > 0.0 which converts to a durDW of 0.
+        {
+            usleep((int) dur * 1000);
+        }
+        if ((int) glfwGetTime() != (int) lastFrame) {
+            std::cout << "FPS: " << frameTotal << "   " << currentFrame << std::endl;
+            frameTotal = 0;
+        }
+        frameTotal += 1;
+
     }
 
     // optional: de-allocate all resources once they've outlived their purpose:

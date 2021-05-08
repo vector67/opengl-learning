@@ -35,7 +35,7 @@ public:
 	
 	// Generates the isosurface from the scalar field contained in the
 	// buffer ptScalarField[].
-	void GenerateSurface(const T* ptScalarField, T tIsoLevel, unsigned int nCellsX, unsigned int nCellsY,  unsigned int nCellsZ, float fCellLengthX, float fCellLengthY, float fCellLengthZ);
+	void GenerateSurface(T func (float, float, float), T tIsoLevel, unsigned int nCellsX, unsigned int nCellsY,  unsigned int nCellsZ, float fCellLengthX, float fCellLengthY, float fCellLengthZ);
 
 	// Returns true if a valid surface has been generated.
 	bool IsSurfaceValid();
@@ -74,10 +74,10 @@ protected:
 	VECTOR3D* m_pvec3dNormals;
 
     // List of POINT3Ds which form the isosurface.
-	ID2POINT3DID m_i2pt3idVertices;
+	ID2POINT3DID * m_i2pt3idVertices = new ID2POINT3DID();
 
 	// List of TRIANGLES which form the triangulation of the isosurface.
-	TRIANGLEVECTOR m_trivecTriangles;
+	TRIANGLEVECTOR * m_trivecTriangles = new TRIANGLEVECTOR();
 
 	// Returns the edge ID.
 	unsigned int GetEdgeID(unsigned int nX, unsigned int nY, unsigned int nZ, unsigned int nEdgeNo);
@@ -87,7 +87,7 @@ protected:
 
 	// Calculates the intersection point of the isosurface with an
 	// edge.
-	POINT3DID CalculateIntersection(unsigned int nX, unsigned int nY, unsigned int nZ, unsigned int nEdgeNo);
+	POINT3DID CalculateIntersection(unsigned int nX, unsigned int nY, unsigned int nZ, unsigned int nEdgeNo, T scalarField (float, float, float));
 
 	// Interpolates between two grid points to produce the point at which
 	// the isosurface intersects an edge.
@@ -107,7 +107,6 @@ protected:
 	float m_fCellLengthX, m_fCellLengthY, m_fCellLengthZ;
 
 	// The buffer holding the scalar field.
-	const T* m_ptScalarField;
 
 	// The isosurface value.
 	T m_tIsoLevel;
