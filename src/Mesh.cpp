@@ -7,7 +7,7 @@
 
 Mesh::Mesh(Vertex * vertices, unsigned int numVertices,
            unsigned int * indices, unsigned int numIndices,
-           Texture *textures, unsigned int numTextures){
+           Texture **textures, unsigned int numTextures){
     this->vertices = vertices;
     this->numVertices = numVertices;
     this->indices = indices;
@@ -53,14 +53,9 @@ void Mesh::Draw(Shader &shader)
         glActiveTexture(GL_TEXTURE0 + i); // activate proper texture unit before binding
         // retrieve texture number (the N in diffuse_textureN)
         std::string number;
-        std::string name = textures[i].type;
-        if(name == "texture_diffuse")
-            number = std::to_string(diffuseNr++);
-        else if(name == "texture_specular")
-            number = std::to_string(specularNr++);
-
-        shader.setFloat("material." + name + number, i);
-        glBindTexture(GL_TEXTURE_2D, textures[i].id);
+        std::string name = textures[i]->type;
+        shader.setFloat("material." + name, i);
+        glBindTexture(GL_TEXTURE_2D, textures[i]->id);
     }
     glActiveTexture(GL_TEXTURE0);
 

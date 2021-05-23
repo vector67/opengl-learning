@@ -11,17 +11,12 @@
 #include <string>
 #include <assimp/types.h>
 #include "Shader.h"
+#include "textures/Texture.h"
 
 struct Vertex {
     glm::vec3 Position;
     glm::vec3 Normal;
     glm::vec2 TexCoords;
-};
-
-struct Texture {
-    unsigned int id;
-    std::string type;
-    aiString path;
 };
 
 class Mesh {
@@ -31,12 +26,12 @@ public:
     unsigned int numVertices;
     unsigned int *indices;
     unsigned int numIndices;
-    Texture *textures;
+    Texture **textures;
     unsigned int numTextures;
 
     Mesh(Vertex *vertices, unsigned int numVertices,
          unsigned int *indices, unsigned int numIndices,
-         Texture *textures, unsigned int numTextures);
+         Texture **textures, unsigned int numTextures);
 
     void Draw(Shader &shader);
 

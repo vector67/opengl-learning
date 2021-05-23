@@ -5,7 +5,7 @@
 		<Option title="Glad"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\include\;CMake Files\include\assimp\;CMake Files\include\assimp\include\;CMake Files\include\assimp\include\assimp\;CMake Files\include\assimp\cmake-modules\;CMake Files\include\assimp\cmake\;CMake Files\include\assimp\code\;CMake Files\include\assimp\tools\;CMake Files\include\assimp\tools\assimp_cmd\;CMake Files\include\assimp\test\;CMake Files\include\assimp\test\headercheck\;CMake Files\include\glad\;CMake Files\include\glm\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\glfw3\;CMake Files\configuration\;CMake Files\src\;CMake Files\src\marchingCubes\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\include\;CMake Files\include\assimp\;CMake Files\include\assimp\include\;CMake Files\include\assimp\include\assimp\;CMake Files\include\assimp\cmake-modules\;CMake Files\include\assimp\cmake\;CMake Files\include\assimp\code\;CMake Files\include\assimp\tools\;CMake Files\include\assimp\tools\assimp_cmd\;CMake Files\include\assimp\test\;CMake Files\include\assimp\test\headercheck\;CMake Files\include\glad\;CMake Files\include\glm\;CMake Files\include\NEAT\;CMake Files\include\random\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\glfw3\;CMake Files\configuration\;CMake Files\src\;CMake Files\src\marchingCubes\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/admin/Documents/Project/Learning/opengl/include/glad"/>
@@ -116,6 +116,12 @@
 		</Unit>
 		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/glm/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\include\glm\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/NEAT/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\include\NEAT\"/>
+		</Unit>
+		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/include/random/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\include\random\"/>
 		</Unit>
 		<Unit filename="/Users/admin/Documents/Project/Learning/opengl/../../../../../../usr/local/lib/cmake/glfw3/glfw3Config.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\glfw3\"/>

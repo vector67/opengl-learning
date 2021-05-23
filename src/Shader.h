@@ -13,6 +13,26 @@
 #include <iostream>
 #include <glm/detail/type_mat4x4.hpp>
 
+struct PointLight {
+    glm::vec3 position;
+
+    float constant;
+    float linear;
+    float quadratic;
+
+    glm::vec3 ambient;
+    glm::vec3 diffuse;
+    glm::vec3 specular;
+};
+
+struct DirLight {
+    glm::vec3 direction;
+
+    glm::vec3 ambient;
+    glm::vec3 diffuse;
+    glm::vec3 specular;
+};
+
 class Shader {
 public:
     unsigned int ID;
@@ -31,6 +51,9 @@ public:
     void setVec4(const std::string &name, float val1, float val2, float val3, float val4) const;
 
     void setMat4(const std::string &name, glm::mat4 mat) const;
+
+    void setPointLight(const int num, const PointLight &light);
+    void setDirLight(const DirLight &light);
 };
 
 

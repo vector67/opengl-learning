@@ -84,6 +84,8 @@ void Shader::use() const {
     glUseProgram(ID);
 }
 
+
+
 void Shader::setBool(const std::string &name, bool value) const {
     glUniform1i(glGetUniformLocation(ID, name.c_str()), (int) value);
 }
@@ -110,4 +112,36 @@ void Shader::setVec4(const std::string &name, float val1, float val2, float val3
 
 void Shader::setMat4(const std::string &name, glm::mat4 mat) const {
     glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(mat));
+}
+
+void Shader::setPointLight(const int num, const PointLight &light) {
+    char buf[30];
+
+    snprintf(buf, 30, "pointLights[%d].position", num);
+    setVec3(buf, light.position);
+
+    snprintf(buf, 30, "pointLights[%d].ambient", num);
+    setVec3(buf, light.ambient);
+
+    snprintf(buf, 30, "pointLights[%d].diffuse", num);
+    setVec3(buf, light.diffuse);
+
+    snprintf(buf, 30, "pointLights[%d].specular", num);
+    setVec3(buf, light.diffuse);
+
+    snprintf(buf, 30, "pointLights[%d].constant", num);
+    setFloat(buf, light.constant);
+
+    snprintf(buf, 30, "pointLights[%d].linear", num);
+    setFloat(buf, light.linear);
+
+    snprintf(buf, 30, "pointLights[%d].quadratic", num);
+    setFloat(buf, light.quadratic);
+}
+
+void Shader::setDirLight(const DirLight &light) {
+    setVec3("dirLight.direction", light.direction);
+    setVec3("dirLight.ambient", light.ambient);
+    setVec3("dirLight.diffuse", light.diffuse);
+    setVec3("dirLight.specular", light.specular);
 }

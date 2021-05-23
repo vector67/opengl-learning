@@ -34,6 +34,8 @@ set(ASSIMP_BUILD_STATIC_LIB ON)
 add_subdirectory(include/assimp/)
 add_subdirectory(include/glad)
 add_subdirectory(include/glm)
+add_subdirectory(include/NEAT)
+add_subdirectory("include/random")
 add_subdirectory(src/marchingCubes)
 find_package(glfw3 3.3 REQUIRED)
 
@@ -48,7 +50,7 @@ configure_file(configuration/root_directory.h.in configuration/root_directory.h)
 include_directories(${CMAKE_BINARY_DIR}/configuration)
 
 link_directories(/usr/local/lib)
-add_executable(main src/main.cpp src/Shader.cpp src/Shader.h include/stb_image.h include/stb_image.cpp src/Camera.h src/Mesh.cpp src/Mesh.h src/Model.cpp src/Model.h src/filesystem.h)
+add_executable(main src/main.cpp src/Shader.cpp src/Shader.h include/stb_image.h include/stb_image.cpp src/Camera.h src/Mesh.cpp src/Mesh.h src/Model.cpp src/Model.h src/filesystem.h src/textures/Texture.cpp src/textures/Texture.h src/textures/TextureUtility.h)
 
 target_include_directories(main PUBLIC include/luajit/src)
 
@@ -59,6 +61,7 @@ target_link_libraries(main PRIVATE glad)
 target_link_libraries(main PRIVATE glm)
 target_link_libraries(main PRIVATE glfw)
 target_link_libraries(main PUBLIC luajit-5.1)
+target_link_libraries(main PUBLIC neat)
 
 add_custom_target(run
         COMMAND main
