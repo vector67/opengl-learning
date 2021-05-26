@@ -54,80 +54,18 @@ float lastFrame = 0.0f;
 glm::vec3 lightPos(0.0f, 7.0f, 0.0f);
 
 double targetFPS = 30.0;
+pcg32_fast rng;
+double *noise;
 
 int main() {
-
-    int status, result, i;
-    double sum;
-    lua_State *L;
-
-    /*
-     * All Lua contexts are held in this structure. We work with it almost
-     * all the time.
-     */
-    L = luaL_newstate();
-
-    luaL_openlibs(L); /* Load Lua libraries */
-
-    /* Load the file containing the script we are going to run */
-    status = luaL_loadfile(L, "lua/script.lua");
-    if (status) {
-        /* If something went wrong, error message is at the top of */
-        /* the stack */
-        fprintf(stderr, "Couldn't load file: %s\n", lua_tostring(L, -1));
-        exit(1);
+    int i;
+    noise = new double[200 * 200];
+    for (i = 0; i < 200; i++) {
+        for (int j = 0; j < 200; j++) {
+            noise[i * 200 + j] = Tex::ValueNoise_2D(i, j);
+        }
+        std::cout << Tex::ValueNoise_2D(i, 0) << std::endl;
     }
-
-    /*
-     * Ok, now here we go: We pass data to the lua script on the stack.
-     * That is, we first have to prepare Lua's virtual stack the way we
-     * want the script to receive it, then ask Lua to run it.
-     */
-    lua_newtable(L);    /* We will pass a table */
-
-    /*
-     * To put values into the table, we first push the index, then the
-     * value, and then call lua_rawset() with the index of the table in the
-     * stack. Let's see why it's -3: In Lua, the value -1 always refers to
-     * the top of the stack. When you create the table with lua_newtable(),
-     * the table gets pushed into the top of the stack. When you push the
-     * index and then the cell value, the stack looks like:
-     *
-     * <- [stack bottom] -- table, index, value [top]
-     *
-     * So the -1 will refer to the cell value, thus -3 is used to refer to
-     * the table itself. Note that lua_rawset() pops the two last elements
-     * of the stack, so that after it has been called, the table is at the
-     * top of the stack.
-     */
-    for (i = 1; i <= 5; i++) {
-        lua_pushnumber(L, i);   /* Push the table index */
-        lua_pushnumber(L, i * 2); /* Push the cell value */
-        lua_rawset(L, -3);      /* Stores the pair in the table */
-    }
-
-    /* By what name is the script going to reference our table? */
-    lua_setglobal(L, "foo");
-
-    /* Ask Lua to run our little script */
-    result = lua_pcall(L, 0, LUA_MULTRET, 0);
-    if (result) {
-        fprintf(stderr, "Failed to run script: %s\n", lua_tostring(L, -1));
-        exit(1);
-    }
-
-    /* Get the returned value at the top of the stack (index -1) */
-    sum = lua_tonumber(L, -1);
-
-    printf("Script returned: %.0f\n", sum);
-
-    lua_pop(L, 1);  /* Take the returned value out of the stack */
-    lua_close(L);   /* Cya, Lua */
-
-
-
-
-
     // glfw: initialize and configure
     // ------------------------------
     glfwInit();
@@ -232,8 +170,8 @@ int main() {
 
     // Create a mesh from a scalar field
     auto *surface = new CIsoSurface<float>();
-    int resolution = 100;
-    float cubeSize = 2.9;
+    int resolution = 200;
+    float cubeSize = 1;
     int numCells = resolution + 1;
 
     float cellWidth = cubeSize / float(numCells);
@@ -286,7 +224,7 @@ int main() {
     unsigned int dataSize = cWidth * cHeight * 3;
     auto *data = new unsigned char[dataSize];
     for (i = 0; i < dataSize; i++) {
-        data[i] = Tex::ValueNoise_2D(i / (cWidth*3), (i / 3) % cHeight) * 255 * 0.5 + 255*0.5;
+        data[i] = Tex::ValueNoise_2D(i / (cWidth * 3), (i / 3) % cHeight) * 255 * 0.5 + 255 * 0.5;
     }
     Texture textureDiffuse(cWidth, cHeight, "diffuse");
     textureDiffuse.init(data);
@@ -300,11 +238,15 @@ int main() {
     VECTOR3D *normals = surface->getMPvec3DNormals();
     unsigned int numVertices = surface->getNumVertices();
 
-    Vertex vertices[numVertices];
+    auto *vertices = new Vertex[numVertices];
+    if (numVertices > 300000) {
+        std::cout << numVertices << ">" << 300000 << std::endl;
+        return 255;
+    }
 
     for (i = 0; i < numVertices; i++) {
         Vertex v{};
-        v.Position = glm::vec3(points[i][0], points[i][1], points[i][2]);
+        v.Position = glm::vec3(points[i][0] * 10, points[i][1] * 10, points[i][2] * 10);
         v.Normal = glm::vec3(-normals[i][0], -normals[i][1], -normals[i][2]);
 //        std::cout << i << " " << points[i][0] << "," << points[i][1] << "," << points[i][2] << " | "
 //            << normals[i][0] << "," << normals[i][1] << "," << normals[i][2] <<std::endl;
@@ -313,7 +255,8 @@ int main() {
 //        v.TexCoords = glm::vec2(std::cos(i * 1.0 / numVertices * 3.1415926) / 2.0 + 0.5,
 //                                std::sin(i * 1.0 / numVertices * 3.1415926) / 2.0 + 0.5);
 
-        v.TexCoords = glm::vec2(0.5 + std::atan2(sphereProjection.x, sphereProjection.z)/(2*3.141592), 0.5 - asin(sphereProjection.y)/3.141592);
+        v.TexCoords = glm::vec2(0.5 + std::atan2(sphereProjection.x, sphereProjection.z) / (2 * 3.141592),
+                                0.5 - asin(sphereProjection.y) / 3.141592);
 //        v.TexCoords = glm::vec2(i/numVertices, i/numVertices);
         vertices[i] = v;
     }
@@ -577,8 +520,14 @@ int main() {
     return 0;
 }
 
-float scalarFieldFunction(float x, float y, float z, ) {
-    return std::sin(x * x) + std::atan2(y * y, z*x) + std::sin(z * z) - 0.5;
+float scalarFieldFunction(float x, float y, float z) {
+//    return std::sin(x * x * (1-rng()/ (2*2147483647.0)/100.0)) + std::atan2(y * y, z*x) + std::sin(z * z) - 0.5;
+//    return std::sin(x * x) + std::atan2(y * y, z*x) + std::sin(z * z) + (noise[int(((x+1)*20000)+(y+1)*100)]-0.5)*(noise[int(((x+1)*20000)+(y+1)*100)]-0.5)*(noise[int(((x+1)*20000)+(y+1)*100)]-0.5);
+//    return x*x + y*y + z*z + (noise[int(((x+1)*20000)+(y+1)*100)]-0.5)*(noise[int(((x+1)*20000)+(y+1)*100)]-0.5)*(noise[int(((x+1)*20000)+(y+1)*100)]-0.5);
+    return x * x + y * y + z * z - 0.2 +
+//           noise[int(((0.5 + std::atan2(x, z) / (2 * 3.141592)) * 40000 + (0.5 - asin(y) / 3.141592) * 200))] *
+//           noise[int(((0.5 + std::atan2(x, z) / (2 * 3.141592)) * 40000 + (0.5 - asin(y) / 3.141592) * 200))] *
+           noise[int(((0.5 + std::atan2(x, z) / (2 * 3.141592)) * 40000 + (0.5 - asin(y) / 3.141592) * 200))]*0.1;
 //    return fmax(fmax(abs(x) - 2, abs(y) - 2), abs(z) - 2);
 }
 //float scalarFieldFunction(float x, float y, float z) {
