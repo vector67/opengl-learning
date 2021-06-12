@@ -24,6 +24,7 @@ extern "C" {
 #include <stdio.h>
 #include <unistd.h>
 #include "random/pcg_random.hpp"
+#include "Model.h"
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 
@@ -59,10 +60,10 @@ double *noise;
 
 int main() {
     int i;
-    noise = new double[200 * 200];
-    for (i = 0; i < 200; i++) {
-        for (int j = 0; j < 200; j++) {
-            noise[i * 200 + j] = Tex::ValueNoise_2D(i, j);
+    noise = new double[50 * 50];
+    for (i = 0; i < 50; i++) {
+        for (int j = 0; j < 50; j++) {
+            noise[i * 50 + j] = Tex::ValueNoise_2D(i, j);
         }
         std::cout << Tex::ValueNoise_2D(i, 0) << std::endl;
     }
@@ -104,6 +105,23 @@ int main() {
     // configure global opengl state
     // -----------------------------
     glEnable(GL_DEPTH_TEST);
+    Shader ourShader("1.model_loading.vs.glsl", "1.model_loading.fs.glsl");
+
+//    Model ourModel(FileSystem::getPath("assets/backpack/backpack.obj"));
+
+    auto *vertices = new std::vector<Vertex>({
+            // positions          // colors           // texture coords
+            {glm::vec3(0.5f, 0.5f, 0.0f),   glm::vec3(1.0f, 0.0f, 0.0f), glm::vec2(1.0f, 1.0f)}, // top right
+            {glm::vec3(0.5f, -0.5f, 0.0f),  glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(1.0f, 0.0f)}, // bottom right
+            {glm::vec3(-0.5f, -0.5f, 0.0f), glm::vec3(0.0f, 0.0f, 1.0f), glm::vec2(0.0f, 0.0f)}, // bottom left
+            {glm::vec3(-0.5f, 0.5f, 0.0f),  glm::vec3(1.0f, 1.0f, 0.0f), glm::vec2(0.0f, 1.0f)}  // top left
+    });
+    auto * indices = new std::vector<unsigned int>({
+            0, 1, 3, // first triangle
+            1, 2, 3  // second triangle
+    });
+    auto * textures = new std::vector<Texture>();
+    Mesh ourMesh(*vertices, *indices, *textures);
 
     // build and compile shaders
     // -------------------------
@@ -219,57 +237,57 @@ int main() {
             glm::vec3(0.8f),
             glm::vec3(1.0f)
     };
-    int cWidth = 400;
-    int cHeight = 400;
-    unsigned int dataSize = cWidth * cHeight * 3;
-    auto *data = new unsigned char[dataSize];
-    for (i = 0; i < dataSize; i++) {
-        data[i] = Tex::ValueNoise_2D(i / (cWidth * 3), (i / 3) % cHeight) * 255 * 0.5 + 255 * 0.5;
-    }
-    Texture textureDiffuse(cWidth, cHeight, "diffuse");
-    textureDiffuse.init(data);
-
-    Texture textureSpecular(cWidth, cHeight, "specular");
-    textureSpecular.init(data);
-
-    surface->GenerateSurface(scalarFieldFunction, 0, resolution, resolution, resolution, cellWidth, cellWidth,
-                             cellWidth);
-    POINT3D *points = surface->getVertices();
-    VECTOR3D *normals = surface->getMPvec3DNormals();
-    unsigned int numVertices = surface->getNumVertices();
-
-    auto *vertices = new Vertex[numVertices];
-    if (numVertices > 300000) {
-        std::cout << numVertices << ">" << 300000 << std::endl;
-        return 255;
-    }
-
-    for (i = 0; i < numVertices; i++) {
-        Vertex v{};
-        v.Position = glm::vec3(points[i][0] * 10, points[i][1] * 10, points[i][2] * 10);
-        v.Normal = glm::vec3(-normals[i][0], -normals[i][1], -normals[i][2]);
-//        std::cout << i << " " << points[i][0] << "," << points[i][1] << "," << points[i][2] << " | "
-//            << normals[i][0] << "," << normals[i][1] << "," << normals[i][2] <<std::endl;
-        glm::vec3 sphereProjection = glm::normalize(v.Position);
-
-//        v.TexCoords = glm::vec2(std::cos(i * 1.0 / numVertices * 3.1415926) / 2.0 + 0.5,
-//                                std::sin(i * 1.0 / numVertices * 3.1415926) / 2.0 + 0.5);
-
-        v.TexCoords = glm::vec2(0.5 + std::atan2(sphereProjection.x, sphereProjection.z) / (2 * 3.141592),
-                                0.5 - asin(sphereProjection.y) / 3.141592);
-//        v.TexCoords = glm::vec2(i/numVertices, i/numVertices);
-        vertices[i] = v;
-    }
-
-    unsigned int *indices = surface->getTriangleIndices();
-    unsigned int numIndices = surface->getNumTriangles() * 3;
-    auto **textures = new Texture *[2];
-    textures[0] = &textureDiffuse;
-    textures[1] = &textureSpecular;
-    Mesh marchingCubesMesh(vertices, numVertices, indices, numIndices, textures, 2);
-    std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();     //get the time...
-    std::cout << "Apparently, it's going to take you "
-              << (end - start).count() / 1000000 << " milliseconds.\n";
+//    int cWidth = 400;
+//    int cHeight = 400;
+//    unsigned int dataSize = cWidth * cHeight * 3;
+//    auto *data = new unsigned char[dataSize];
+//    for (i = 0; i < dataSize; i++) {
+//        data[i] = Tex::ValueNoise_2D(i / (cWidth * 3), (i / 3) % cHeight) * 255 * 0.5 + 255 * 0.5;
+//    }
+//    Texture textureDiffuse(cWidth, cHeight, "diffuse");
+//    textureDiffuse.init(data);
+//
+//    Texture textureSpecular(cWidth, cHeight, "specular");
+//    textureSpecular.init(data);
+//
+//    surface->GenerateSurface(scalarFieldFunction, 0, resolution, resolution, resolution, cellWidth, cellWidth,
+//                             cellWidth);
+//    POINT3D *points = surface->getVertices();
+//    VECTOR3D *normals = surface->getMPvec3DNormals();
+//    unsigned int numVertices = surface->getNumVertices();
+//
+//    auto *vertices = new Vertex[numVertices];
+//    if (numVertices > 300000) {
+//        std::cout << numVertices << ">" << 300000 << std::endl;
+//        return 255;
+//    }
+//
+//    for (i = 0; i < numVertices; i++) {
+//        Vertex v{};
+//        v.Position = glm::vec3(points[i][0] * 10, points[i][1] * 10, points[i][2] * 10);
+//        v.Normal = glm::vec3(-normals[i][0], -normals[i][1], -normals[i][2]);
+////        std::cout << i << " " << points[i][0] << "," << points[i][1] << "," << points[i][2] << " | "
+////            << normals[i][0] << "," << normals[i][1] << "," << normals[i][2] <<std::endl;
+//        glm::vec3 sphereProjection = glm::normalize(v.Position);
+//
+////        v.TexCoords = glm::vec2(std::cos(i * 1.0 / numVertices * 3.1415926) / 2.0 + 0.5,
+////                                std::sin(i * 1.0 / numVertices * 3.1415926) / 2.0 + 0.5);
+//
+//        v.TexCoords = glm::vec2(0.5 + std::atan2(sphereProjection.x, sphereProjection.z) / (2 * 3.141592),
+//                                0.5 - asin(sphereProjection.y) / 3.141592);
+////        v.TexCoords = glm::vec2(i/numVertices, i/numVertices);
+//        vertices[i] = v;
+//    }
+//
+//    unsigned int *indices = surface->getTriangleIndices();
+//    unsigned int numIndices = surface->getNumTriangles() * 3;
+//    auto **textures = new Texture *[2];
+//    textures[0] = &textureDiffuse;
+//    textures[1] = &textureSpecular;
+//    Mesh marchingCubesMesh(vertices, numVertices, indices, numIndices, textures, 2);
+//    std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();     //get the time...
+//    std::cout << "Apparently, it's going to take you "
+//              << (end - start).count() / 1000000 << " milliseconds.\n";
     float quadVertices[] = { // vertex attributes for a quad that fills the entire screen in Normalized Device Coordinates.
             // positions   // texCoords
             -1.0f, 1.0f, 0.0f, 1.0f,
@@ -401,40 +419,50 @@ int main() {
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        shader.use();
-        for (i = 0; i < 4; i++) {
-            shader.setPointLight(i, pointLights[i]);
-        }
-        shader.setDirLight(dirLight);
-        glm::mat4 model = glm::mat4(1.0f);
-        glm::mat4 view = camera.GetViewMatrix();
-        glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float) SCR_WIDTH / (float) SCR_HEIGHT, 0.1f,
-                                                100.0f);
-        shader.setMat4("view", view);
-        shader.setMat4("projection", projection);
-
-
-        shader.setMat4("model", model);
-        shader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
-        shader.setVec3("viewPos", camera.Position);
-        marchingCubesMesh.Draw(shader);
-
-        // cubes
-        cubeShader.use();
-        glBindVertexArray(cubeVAO);
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, cubeTexture);
-        model = glm::mat4(1.0f);
-        model = glm::scale(model, glm::vec3(30));
-        model = glm::translate(model, glm::vec3(.0f, 0.45f, 0.0f));
-        cubeShader.setMat4("model", model);
-        cubeShader.setMat4("view", view);
-        cubeShader.setMat4("projection", projection);
-        cubeShader.setVec3("objectColor", glm::vec3(0.5f, 0.8f, 0.6f));
-        cubeShader.setVec3("lightColor", glm::vec3(1.0f, 1.0f, 1.0f));
-        cubeShader.setVec3("lightPos", lightPos);
-        cubeShader.setVec3("viewPos", camera.Position);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
+//        shader.use();
+//        for (i = 0; i < 4; i++) {
+//            shader.setPointLight(i, pointLights[i]);
+//        }
+//        shader.setDirLight(dirLight);
+//        glm::mat4 model = glm::mat4(1.0f);
+//        glm::mat4 view = camera.GetViewMatrix();
+//        glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float) SCR_WIDTH / (float) SCR_HEIGHT, 0.1f,
+//                                                100.0f);
+//        shader.setMat4("view", view);
+//        shader.setMat4("projection", projection);
+//
+//
+//        shader.setMat4("model", model);
+//        shader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
+//        shader.setVec3("viewPos", camera.Position);
+////        marchingCubesMesh.Draw(shader);
+//
+//        // cubes
+//        cubeShader.use();
+//        glBindVertexArray(cubeVAO);
+//        glActiveTexture(GL_TEXTURE0);
+//        glBindTexture(GL_TEXTURE_2D, cubeTexture);
+//        model = glm::mat4(1.0f);
+//        model = glm::scale(model, glm::vec3(30));
+//        model = glm::translate(model, glm::vec3(.0f, 0.45f, 0.0f));
+//        cubeShader.setMat4("model", model);
+//        cubeShader.setMat4("view", view);
+//        cubeShader.setMat4("projection", projection);
+//        cubeShader.setVec3("objectColor", glm::vec3(0.5f, 0.8f, 0.6f));
+//        cubeShader.setVec3("lightColor", glm::vec3(1.0f, 1.0f, 1.0f));
+//        cubeShader.setVec3("lightPos", lightPos);
+//        cubeShader.setVec3("viewPos", camera.Position);
+//
+//        printf("view:\n%f %f %f %f\n", camera.GetViewMatrix()[0][0], camera.GetViewMatrix()[0][1], camera.GetViewMatrix()[0][2], camera.GetViewMatrix()[0][3]);
+//        printf("%f %f %f %f\n", camera.GetViewMatrix()[1][0], camera.GetViewMatrix()[1][1], camera.GetViewMatrix()[1][2], camera.GetViewMatrix()[1][3]);
+//        printf("%f %f %f %f\n", camera.GetViewMatrix()[2][0], camera.GetViewMatrix()[2][1], camera.GetViewMatrix()[2][2], camera.GetViewMatrix()[2][3]);
+//        printf("%f %f %f %f\n", camera.GetViewMatrix()[3][0], camera.GetViewMatrix()[3][1], camera.GetViewMatrix()[3][2], camera.GetViewMatrix()[3][3]);
+//
+//        printf("projection:\n%f %f %f %f\n", projection[0][0], projection[0][1], projection[0][2], projection[0][3]);
+//        printf("%f %f %f %f\n", projection[1][0], projection[1][1], projection[1][2], projection[1][3]);
+//        printf("%f %f %f %f\n", projection[2][0], projection[2][1], projection[2][2], projection[2][3]);
+//        printf("%f %f %f %f\n", projection[3][0], projection[3][1], projection[3][2], projection[3][3]);
+//        glDrawArrays(GL_TRIANGLES, 0, 36);
 
         // cubes
 //        cubeShader.use();
@@ -462,6 +490,21 @@ int main() {
 //        shader.setMat4("model", glm::mat4(1.0f));
 //        glDrawArrays(GL_TRIANGLES, 0, 6);
 //        glBindVertexArray(0);
+        ourShader.use();
+
+        // view/projection transformations
+        glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+        glm::mat4 view = camera.GetViewMatrix();
+        ourShader.setMat4("projection", projection);
+        ourShader.setMat4("view", view);
+
+        // render the loaded model
+        glm::mat4 model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
+        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
+        ourShader.setMat4("model", model);
+//        ourModel.Draw(ourShader);
+        ourMesh.Draw(ourShader);
 
         // now bind back to default framebuffer and draw a quad plane with the attached framebuffer color texture
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -527,7 +570,7 @@ float scalarFieldFunction(float x, float y, float z) {
     return x * x + y * y + z * z - 0.2 +
 //           noise[int(((0.5 + std::atan2(x, z) / (2 * 3.141592)) * 40000 + (0.5 - asin(y) / 3.141592) * 200))] *
 //           noise[int(((0.5 + std::atan2(x, z) / (2 * 3.141592)) * 40000 + (0.5 - asin(y) / 3.141592) * 200))] *
-           noise[int(((0.5 + std::atan2(x, z) / (2 * 3.141592)) * 40000 + (0.5 - asin(y) / 3.141592) * 200))]*0.1;
+           noise[int(((0.5 + std::atan2(x, z) / (2 * 3.141592)) * 40 + (0.5 - asin(y) / 3.141592) * 50))]*0.1;
 //    return fmax(fmax(abs(x) - 2, abs(y) - 2), abs(z) - 2);
 }
 //float scalarFieldFunction(float x, float y, float z) {
